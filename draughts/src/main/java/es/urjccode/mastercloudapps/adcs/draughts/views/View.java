@@ -1,12 +1,12 @@
 package es.urjccode.mastercloudapps.adcs.draughts.views;
 
-import es.urjccode.mastercloudapps.adcs.draughts.controllers.InteractorController;
-import es.urjccode.mastercloudapps.adcs.draughts.controllers.InteractorControllersVisitor;
+import es.urjccode.mastercloudapps.adcs.draughts.controllers.AceptorController;
+import es.urjccode.mastercloudapps.adcs.draughts.controllers.ControllerVisitor;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.PlayController;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.ResumeController;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.StartController;
 
-public class View implements InteractorControllersVisitor {
+public class View implements ControllerVisitor {
 
     private StartView startView;
     private PlayView playView;
@@ -18,7 +18,7 @@ public class View implements InteractorControllersVisitor {
         this.resumeView = new ResumeView();
     }
 
-    public void interact(InteractorController controller) {
+    public void interact(AceptorController controller) {
         assert controller != null;
         controller.accept(this);
     }

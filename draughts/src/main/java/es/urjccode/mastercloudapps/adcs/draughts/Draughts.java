@@ -1,11 +1,11 @@
 package es.urjccode.mastercloudapps.adcs.draughts;
 
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.Logic;
-import es.urjccode.mastercloudapps.adcs.draughts.controllers.InteractorController;
+import es.urjccode.mastercloudapps.adcs.draughts.controllers.AceptorController;
 import es.urjccode.mastercloudapps.adcs.draughts.views.View;
 
 class Draughts {
-    
+
     private View view;
 
     private Logic logic;
@@ -16,16 +16,16 @@ class Draughts {
     }
 
     private void play() {
-        InteractorController controller;
+        AceptorController controller;
 		do {
 			controller = this.logic.getController();
 			if (controller != null)
 				this.view.interact(controller);
-		} while (controller != null); 
+		} while (controller != null);
     }
 
     public static void main(String[] args){
         new Draughts().play();
     }
-    
+
 }

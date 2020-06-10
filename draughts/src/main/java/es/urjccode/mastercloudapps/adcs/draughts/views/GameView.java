@@ -1,12 +1,12 @@
 package es.urjccode.mastercloudapps.adcs.draughts.views;
 
-import es.urjccode.mastercloudapps.adcs.draughts.controllers.InteractorController;
+import es.urjccode.mastercloudapps.adcs.draughts.controllers.AceptorController;
 import es.urjccode.mastercloudapps.adcs.draughts.models.Coordinate;
 import es.urjccode.mastercloudapps.adcs.draughts.models.Piece;
 
 class GameView extends SubView {
 
-    void write(InteractorController controller) {
+    void write(AceptorController controller) {
         assert controller != null;
         final int DIMENSION = controller.getDimension();
         this.writeNumbersLine(DIMENSION);
@@ -22,13 +22,13 @@ class GameView extends SubView {
         this.console.writeln();
     }
 
-    private void writePiecesRow(final int row, InteractorController controller) {
+    private void writePiecesRow(final int row, AceptorController controller) {
         this.console.write((row + 1) + "");
         for (int j = 0; j < controller.getDimension(); j++) {
             Piece piece = controller.getPiece(new Coordinate(row, j));
             if (piece == null)
                 this.console.write(" ");
-            else 
+            else
                 this.console.write(piece.getCode());
         }
         this.console.writeln((row + 1) + "");

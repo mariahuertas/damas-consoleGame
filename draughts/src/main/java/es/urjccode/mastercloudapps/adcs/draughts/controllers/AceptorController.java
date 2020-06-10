@@ -5,9 +5,9 @@ import es.urjccode.mastercloudapps.adcs.draughts.models.Game;
 import es.urjccode.mastercloudapps.adcs.draughts.models.Piece;
 import es.urjccode.mastercloudapps.adcs.draughts.models.State;
 
-public abstract class InteractorController extends Controller {
+public abstract class AceptorController extends Controller {
 
-	protected InteractorController(Game game, State state) {
+	protected AceptorController(Game game, State state) {
 		super(game, state);
 	}
 
@@ -15,6 +15,6 @@ public abstract class InteractorController extends Controller {
 		return this.game.getPiece(coordinate);
 	}
 
-	abstract public void accept(InteractorControllersVisitor controllersVisitor);
+	abstract public void accept(ControllerVisitor controllersVisitor);
 
 }
