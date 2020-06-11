@@ -16,12 +16,12 @@ class Draughts {
     }
 
     private void play() {
-        AceptorController controller;
+        AceptorController acceptorController;
 		do {
-			controller = this.logic.getController();
-			if (controller != null)
-				this.view.interact(controller);
-		} while (controller != null);
+            acceptorController = this.logic.getController();
+			if (acceptorController != null)
+				this.view.interact(acceptorController);
+		} while (acceptorController != null);
     }
 
     public static void main(String[] args){
