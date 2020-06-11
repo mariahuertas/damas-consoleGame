@@ -1,9 +1,12 @@
 package es.urjccode.mastercloudapps.adcs.draughts.models;
 
+import es.urjccode.mastercloudapps.adcs.draughts.utils.Memento;
+import es.urjccode.mastercloudapps.adcs.draughts.utils.Originator;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Game {
+public class Game implements Originator {
 
 	private Board board;
 	private Turn turn;
@@ -60,7 +63,7 @@ public class Game {
 			return Error.OPPOSITE_PIECE;
 		if (!this.board.isEmpty(coordinates[pair + 1]))
 			return Error.NOT_EMPTY_TARGET;
-		List<Piece> betweenDiagonalPieces = 
+		List<Piece> betweenDiagonalPieces =
 			this.board.getBetweenDiagonalPieces(coordinates[pair], coordinates[pair + 1]);
 		return this.board.getPiece(coordinates[pair]).isCorrectMovement(betweenDiagonalPieces, pair, coordinates);
 	}
@@ -197,5 +200,20 @@ public class Game {
 			return false;
 		return true;
 	}
+
+    @Override
+    public Memento createMemento() {
+        GameMemento gameMemento = new GameMemento();
+        gameMemento.setBoard(this.board);
+        gameMemento.setTurn(this.turn);
+        return gameMemento;
+    }
+
+    @Override
+    public void restore(Memento memento) {
+        GameMemento gameMemento = (GameMemento) memento;
+        this.board = gameMemento.getBoard();
+        this.turn = gameMemento.getTurn();
+    }
 
 }
