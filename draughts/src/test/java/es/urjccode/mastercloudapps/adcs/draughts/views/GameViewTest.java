@@ -8,6 +8,8 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
+import es.urjccode.mastercloudapps.adcs.draughts.controllers.implementation.StartControllerImplementation;
+import es.urjccode.mastercloudapps.adcs.draughts.models.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,10 +21,6 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.StartController;
-import es.urjccode.mastercloudapps.adcs.draughts.models.Coordinate;
-import es.urjccode.mastercloudapps.adcs.draughts.models.Game;
-import es.urjccode.mastercloudapps.adcs.draughts.models.GameBuilder;
-import es.urjccode.mastercloudapps.adcs.draughts.models.State;
 import es.urjccode.mastercloudapps.adcs.draughts.utils.Console;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -39,11 +37,12 @@ public class GameViewTest {
     public void before() {
         MockitoAnnotations.initMocks(this);
     }
-    
+
     @Test
     public void testGivenGameViewWhenInteractThenOk(){
         Game game = new GameBuilder().build();
-        StartController startController = new StartController(game, new State());
+        Session session = new SessionImplementation(game, new State());
+        StartController startController = new StartControllerImplementation(session);
         this.gameView.write(startController);
         verify(console, times(90)).write(argument.capture());
         List<String> rows = Arrays.asList(
@@ -73,13 +72,14 @@ public class GameViewTest {
             "        ").build();
         game.move(
           new Coordinate(1, 0),
-          new Coordinate(0, 1)  
+          new Coordinate(0, 1)
         );
         game.move(
           new Coordinate(6, 1),
-          new Coordinate(7, 0)  
+          new Coordinate(7, 0)
         );
-        StartController startController = new StartController(game, new State());
+        Session session = new SessionImplementation(game, new State());
+        StartController startController = new StartControllerImplementation(session);
         this.gameView.write(startController);
         verify(console, times(90)).write(argument.capture());
         List<String> rows = Arrays.asList(

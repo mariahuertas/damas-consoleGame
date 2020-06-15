@@ -12,16 +12,9 @@ public abstract class AceptorController extends Controller {
         super(session);
     }
 
-
-	/*protected AceptorController(Game game, State state) {
-		super(game, state);
-	}
-
-    TODO:
 	public Piece getPiece(Coordinate coordinate) {
-		return this.game.getPiece(coordinate);
-	}
-	*/
+        return this.session.getPiece(coordinate);
+        }
 
 	abstract public void accept(ControllerVisitor controllersVisitor);
 

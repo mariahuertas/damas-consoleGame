@@ -18,6 +18,14 @@ public class SessionImplementation implements Session{
         this.game = new Game();
         this.registry = new Registry(this.game);
     }
+    public SessionImplementation(Game game, State state) {
+        this.game = game;
+        this.state = state;
+    }
+
+    public void resetGame() { this.game.reset();}
+
+    public void resetState() {this.state.reset();}
 
     public Game getGame() {
         return this.game;
@@ -40,7 +48,7 @@ public class SessionImplementation implements Session{
     public Error move(Coordinate... coordinates) {
         Error error = this.game.move(coordinates);
         if (error == null) {
-            this.registry.registry();
+            //this.registry.registry();
         }
         return error;
     }

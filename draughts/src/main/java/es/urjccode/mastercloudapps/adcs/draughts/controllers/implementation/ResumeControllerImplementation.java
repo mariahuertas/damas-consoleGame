@@ -1,16 +1,16 @@
 package es.urjccode.mastercloudapps.adcs.draughts.controllers.implementation;
 
-import mastermind.controllers.ResumeController;
-import mastermind.models.Session;
-import mastermind.models.SessionImplementation;
+import es.urjccode.mastercloudapps.adcs.draughts.controllers.ResumeController;
+import es.urjccode.mastercloudapps.adcs.draughts.models.Session;
+import es.urjccode.mastercloudapps.adcs.draughts.models.SessionImplementation;
 
 public class ResumeControllerImplementation extends ResumeController {
 
-	ResumeControllerImplementation(Session session) {
+	public ResumeControllerImplementation(Session session) {
 		super(session);
 	}
 
-	@Override
+	/*@Override
 	public void isNewGame(boolean newGame) {
 		if (newGame) {
 			((SessionImplementation) this.session).isNewGame();
@@ -18,5 +18,15 @@ public class ResumeControllerImplementation extends ResumeController {
 			((SessionImplementation) this.session).next();
 		}
 	}
+*/
+	@Override
+    public void next() {
+        ((SessionImplementation) this.session).next();
+    }
+    @Override
+    public void reset() {
+        ((SessionImplementation) this.session).resetGame();
+        ((SessionImplementation) this.session).resetState();
+    }
 
 }

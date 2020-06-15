@@ -8,7 +8,7 @@ import es.urjccode.mastercloudapps.adcs.draughts.models.SessionImplementation;
 
 public class StartControllerImplementation extends StartController {
 
-	StartControllerImplementation(Session session) {
+	public StartControllerImplementation(Session session) {
 		super(session);
 	}
 

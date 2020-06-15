@@ -2,13 +2,10 @@ package es.urjccode.mastercloudapps.adcs.draughts.controllers;
 
 import static org.junit.Assert.assertEquals;
 
+import es.urjccode.mastercloudapps.adcs.draughts.controllers.implementation.ResumeControllerImplementation;
+import es.urjccode.mastercloudapps.adcs.draughts.models.*;
 import org.junit.Before;
 import org.junit.Test;
-
-import es.urjccode.mastercloudapps.adcs.draughts.models.Game;
-import es.urjccode.mastercloudapps.adcs.draughts.models.GameBuilder;
-import es.urjccode.mastercloudapps.adcs.draughts.models.State;
-import es.urjccode.mastercloudapps.adcs.draughts.models.StateValue;
 
 public class ResumeControllerTest {
 
@@ -19,7 +16,8 @@ public class ResumeControllerTest {
     public void before(){
         Game game = new GameBuilder().build();
         this.state = new State();
-        this.resumeController = new ResumeController(game, state);
+        Session session = new SessionImplementation(game, state);
+        this.resumeController = new ResumeControllerImplementation(session);
     }
 
     @Test

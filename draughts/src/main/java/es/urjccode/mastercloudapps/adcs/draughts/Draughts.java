@@ -2,6 +2,7 @@ package es.urjccode.mastercloudapps.adcs.draughts;
 
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.Logic;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.AceptorController;
+import es.urjccode.mastercloudapps.adcs.draughts.controllers.implementation.LogicImplementation;
 import es.urjccode.mastercloudapps.adcs.draughts.views.View;
 
 class Draughts {
@@ -12,7 +13,7 @@ class Draughts {
 
     private Draughts(){
         this.view = new View();
-        this.logic = new Logic();
+        this.logic = new LogicImplementation();
     }
 
     private void play() {
