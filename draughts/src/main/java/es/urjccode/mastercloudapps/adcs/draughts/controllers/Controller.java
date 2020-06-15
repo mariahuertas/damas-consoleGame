@@ -1,20 +1,15 @@
 package es.urjccode.mastercloudapps.adcs.draughts.controllers;
 
-import es.urjccode.mastercloudapps.adcs.draughts.models.Color;
-import es.urjccode.mastercloudapps.adcs.draughts.models.Coordinate;
-import es.urjccode.mastercloudapps.adcs.draughts.models.Game;
-import es.urjccode.mastercloudapps.adcs.draughts.models.State;
+import es.urjccode.mastercloudapps.adcs.draughts.models.*;
 
-class Controller {
+public abstract class Controller {
 
+    protected Session session;
     protected Game game;
     protected State state;
 
-    protected Controller(Game game, State state) {
-        assert game != null;
-        assert state != null;
-        this.game = game;
-        this.state = state;
+    Controller(Session session) {
+        this.session = session;
     }
 
     public Color getColor(Coordinate coordinate) {

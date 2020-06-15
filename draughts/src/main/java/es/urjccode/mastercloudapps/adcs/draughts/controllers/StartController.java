@@ -1,22 +1,17 @@
 package es.urjccode.mastercloudapps.adcs.draughts.controllers;
+import es.urjccode.mastercloudapps.adcs.draughts.models.Session;
 
-import es.urjccode.mastercloudapps.adcs.draughts.models.Game;
-import es.urjccode.mastercloudapps.adcs.draughts.models.State;
+public abstract class StartController extends AceptorController {
 
-public class StartController extends AceptorController {
-
-	public StartController(Game game, State state) {
-        super(game, state);
-	}
-
-	public void start() {
-        this.state.next();
-	}
-
-    @Override
-	public void accept(ControllerVisitor controllersVisitor) {
-		assert controllersVisitor != null;
-		controllersVisitor.visit(this);
+    public StartController(Session session) {
+        super(session);
     }
 
+    public abstract void start();
+
+    @Override
+    public void accept(ControllerVisitor controllerVisitor) {
+        assert controllerVisitor != null;
+        controllerVisitor.visit(this);
+    }
 }

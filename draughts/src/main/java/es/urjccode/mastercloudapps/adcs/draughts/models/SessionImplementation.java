@@ -94,4 +94,9 @@ public class SessionImplementation implements Session{
     public int getDimension() {
         return this.game.getDimension();
     }
+
+    @Override
+    public StateValue getValueState() {
+        return this.state.getValueState();
+    }
 }

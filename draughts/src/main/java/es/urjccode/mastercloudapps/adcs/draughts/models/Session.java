@@ -4,6 +4,8 @@ import java.util.List;
 
 public interface Session {
 
+    StateValue getValueState();
+
     boolean isBlocked();
 
     Color getColor(Coordinate coordinate);

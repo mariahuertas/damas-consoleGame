@@ -1,42 +1,29 @@
 package es.urjccode.mastercloudapps.adcs.draughts.controllers;
 
-import es.urjccode.mastercloudapps.adcs.draughts.models.Color;
-import es.urjccode.mastercloudapps.adcs.draughts.models.Coordinate;
-import es.urjccode.mastercloudapps.adcs.draughts.models.State;
 import es.urjccode.mastercloudapps.adcs.draughts.models.Error;
-import es.urjccode.mastercloudapps.adcs.draughts.models.Game;
+import es.urjccode.mastercloudapps.adcs.draughts.models.*;
 
-public class PlayController extends AceptorController {
+public abstract class PlayController extends AceptorController {
 
-	private CancelController cancelController;
-	private MoveController moveController;
+    protected PlayController(Session session) {super(session);}
 
-	public PlayController(Game game, State state) {
-		super(game, state);
-		this.cancelController = new CancelController(game, state);
-		this.moveController = new MoveController(game, state);
-	}
+    public abstract Error move(Coordinate... coordinates);
 
-	public Error move(Coordinate... coordinates) {
-		return this.moveController.move(coordinates);
-	}
+    /*
+    public abstract void undo();
 
-	public void cancel() {
-		this.cancelController.cancel();
-	}
+    public abstract void redo();
 
-	public Color getColor() {
-		return this.game.getTurnColor();
-	}
+    public abstract boolean undoable();
 
-	public boolean isBlocked() {
-		return this.game.isBlocked();
-	}
+    public abstract boolean redoable();
+   */
+    public abstract void next();
 
-	@Override
-	public void accept(ControllerVisitor controllersVisitor) {
-		assert controllersVisitor != null;
-		controllersVisitor.visit(this);
-	}
+
+    @Override
+    public void accept(ControllerVisitor controllersVisitor) {
+        controllersVisitor.visit(this);
+    }
 
 }
