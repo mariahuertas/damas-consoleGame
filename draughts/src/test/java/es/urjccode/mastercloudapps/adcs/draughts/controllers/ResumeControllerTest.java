@@ -23,23 +23,23 @@ public class ResumeControllerTest {
     @Test
     public void givenResumeControllerWhenResumeGameMoveToInitialStateRequiereCorrectThenNotError() {
         assertEquals(StateValue.INITIAL, this.state.getValueState());
-        resumeController.next();
+        resumeController.isNewGame(false);
         assertEquals(StateValue.IN_GAME, this.state.getValueState());
-        resumeController.next();
+        resumeController.isNewGame(false);
         assertEquals(StateValue.FINAL, this.state.getValueState());
-        resumeController.reset();
+        resumeController.isNewGame(true);
         assertEquals(StateValue.INITIAL, this.state.getValueState());
     }
 
     @Test(expected = AssertionError.class)
     public void givenResumeControllerWhenResumeGameMoveOutThenError() {
         assertEquals(StateValue.INITIAL, this.state.getValueState());
-        resumeController.next();
+        resumeController.isNewGame(false);
         assertEquals(StateValue.IN_GAME, this.state.getValueState());
-        resumeController.next();
+        resumeController.isNewGame(false);
         assertEquals(StateValue.FINAL, this.state.getValueState());
-        resumeController.next();
+        resumeController.isNewGame(false);
         assertEquals(StateValue.EXIT, this.state.getValueState());
-        resumeController.next();
+        resumeController.isNewGame(false);
     }
 }

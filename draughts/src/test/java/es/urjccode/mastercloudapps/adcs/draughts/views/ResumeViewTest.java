@@ -29,19 +29,19 @@ public class ResumeViewTest {
     public void initMocks() {
         MockitoAnnotations.initMocks(this);
     }
-    
+
     @Test
     public void testGivenResumeViewWhenAnswerYesThenReset(){
         when(yesNoDialog.read(anyString())).thenReturn(true);
         resumeView.interact(resumeController);
-        verify(resumeController).reset();
+        verify(resumeController).isNewGame(false);
     }
 
     @Test
     public void testGivenResumeViewWhenAnswerNoThenNext(){
         when(yesNoDialog.read(anyString())).thenReturn(false);
         resumeView.interact(resumeController);
-        verify(resumeController).next();
+        verify(resumeController).isNewGame(false);
     }
 
 }

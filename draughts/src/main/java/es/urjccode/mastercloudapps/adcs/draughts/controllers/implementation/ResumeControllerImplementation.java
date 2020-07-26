@@ -10,23 +10,12 @@ public class ResumeControllerImplementation extends ResumeController {
 		super(session);
 	}
 
-	/*@Override
 	public void isNewGame(boolean newGame) {
 		if (newGame) {
-			((SessionImplementation) this.session).isNewGame();
+			((SessionImplementation) this.session).resume();
 		} else {
 			((SessionImplementation) this.session).next();
 		}
 	}
-*/
-	@Override
-    public void next() {
-        ((SessionImplementation) this.session).next();
-    }
-    @Override
-    public void reset() {
-        ((SessionImplementation) this.session).resetGame();
-        ((SessionImplementation) this.session).resetState();
-    }
 
 }

@@ -5,6 +5,7 @@ import es.urjccode.mastercloudapps.adcs.draughts.controllers.ControllerVisitor;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.PlayController;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.ResumeController;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.StartController;
+import es.urjccode.mastercloudapps.adcs.draughts.utils.YesNoDialog;
 
 public class View implements ControllerVisitor {
 
@@ -37,8 +38,6 @@ public class View implements ControllerVisitor {
 
     @Override
     public void visit(ResumeController resumeController) {
-        assert resumeController != null;
         this.resumeView.interact(resumeController);
     }
-
 }

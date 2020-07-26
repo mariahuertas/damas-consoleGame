@@ -42,7 +42,7 @@ public class SessionImplementation implements Session{
     public void resume() {
         this.game.reset();
         this.state.reset();
-        this.registry.reset();
+        //this.registry.reset();
     }
 
     public Error move(Coordinate... coordinates) {

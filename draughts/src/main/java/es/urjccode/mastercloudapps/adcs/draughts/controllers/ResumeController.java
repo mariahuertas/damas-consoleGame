@@ -10,9 +10,7 @@ public abstract class ResumeController extends AceptorController {
         super(session);
 	}
 
-	public abstract void next();
-
-	public abstract void reset();
+    public abstract void isNewGame(boolean newGame);
 
     @Override
 	public void accept(ControllerVisitor controllersVisitor) {
