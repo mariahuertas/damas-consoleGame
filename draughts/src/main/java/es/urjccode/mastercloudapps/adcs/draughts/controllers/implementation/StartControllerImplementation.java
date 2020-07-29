@@ -3,13 +3,17 @@ package es.urjccode.mastercloudapps.adcs.draughts.controllers.implementation;
 import java.util.List;
 
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.StartController;
+import es.urjccode.mastercloudapps.adcs.draughts.models.DAO.SessionImplementationDAO;
 import es.urjccode.mastercloudapps.adcs.draughts.models.Session;
 import es.urjccode.mastercloudapps.adcs.draughts.models.SessionImplementation;
 
 public class StartControllerImplementation extends StartController {
 
-	public StartControllerImplementation(Session session) {
-		super(session);
+    private final SessionImplementationDAO sessionImplementationDAO;
+
+    public StartControllerImplementation(Session session, SessionImplementationDAO sessionImplementationDAO) {
+	    super(session);
+        this.sessionImplementationDAO = sessionImplementationDAO;
 	}
 
 	@Override
@@ -24,4 +28,14 @@ public class StartControllerImplementation extends StartController {
 		((SessionImplementation) this.session).next();
 		*/
 	}
+
+    @Override
+    public void start(String name) {
+        this.sessionImplementationDAO.load(name);
+    }
+
+    @Override
+    public String[] getGamesNames() {
+        return this.sessionImplementationDAO.getGamesNames();
+    }
 }

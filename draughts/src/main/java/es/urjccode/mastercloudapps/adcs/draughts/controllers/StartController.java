@@ -9,6 +9,10 @@ public abstract class StartController extends AceptorController {
 
     public abstract void start();
 
+    public abstract void start(String title);
+
+    public abstract String[] getGamesNames();
+
     @Override
     public void accept(ControllerVisitor controllerVisitor) {
         assert controllerVisitor != null;

@@ -10,6 +10,7 @@ import java.util.List;
 
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.implementation.StartControllerImplementation;
 import es.urjccode.mastercloudapps.adcs.draughts.models.*;
+import es.urjccode.mastercloudapps.adcs.draughts.models.DAO.SessionImplementationDAO;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -42,7 +43,7 @@ public class GameViewTest {
     public void testGivenGameViewWhenInteractThenOk(){
         Game game = new GameBuilder().build();
         Session session = new SessionImplementation(game, new State());
-        StartController startController = new StartControllerImplementation(session);
+        StartController startController = new StartControllerImplementation(session, null);
         this.gameView.write(startController);
         verify(console, times(90)).write(argument.capture());
         List<String> rows = Arrays.asList(
@@ -79,7 +80,7 @@ public class GameViewTest {
           new Coordinate(7, 0)
         );
         Session session = new SessionImplementation(game, new State());
-        StartController startController = new StartControllerImplementation(session);
+        StartController startController = new StartControllerImplementation(session, null);
         this.gameView.write(startController);
         verify(console, times(90)).write(argument.capture());
         List<String> rows = Arrays.asList(

@@ -17,6 +17,4 @@ public class UndoController extends Controller{
         return ((SessionImplementation) this.session).undoable();
 
     }
-
-
 }

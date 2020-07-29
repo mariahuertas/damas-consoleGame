@@ -6,17 +6,19 @@ import java.util.List;
 
 public class SessionImplementation implements Session{
 
-
     private State state;
 
     private Game game;
 
     private Registry registry;
 
+    private String name;
+
     public SessionImplementation() {
         this.state = new State();
         this.game = new Game();
         this.registry = new Registry(this.game);
+        this.name = null;
     }
     public SessionImplementation(Game game, State state) {
         this.game = game;
@@ -43,6 +45,7 @@ public class SessionImplementation implements Session{
         this.game.reset();
         this.state.reset();
         //this.registry.reset();
+        this.name = null;
     }
 
     public Error move(Coordinate... coordinates) {
@@ -78,6 +81,10 @@ public class SessionImplementation implements Session{
         //this.registry.registry();
     }
 
+    public boolean hasName() {
+        return this.name != null;
+    }
+
     @Override
     public boolean isBlocked() {
         return this.game.isBlocked();
@@ -106,5 +113,15 @@ public class SessionImplementation implements Session{
     @Override
     public StateValue getValueState() {
         return this.state.getValueState();
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String getName() {
+        return this.name;
     }
 }

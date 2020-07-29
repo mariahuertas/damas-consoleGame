@@ -17,7 +17,7 @@ public class StartControllerTest {
         Game game = new GameBuilder().build();
         this.state = new State();
         Session session = new SessionImplementation(game, state);
-        this.startController = new StartControllerImplementation(session);
+        this.startController = new StartControllerImplementation(session, null);
     }
 
      @Test

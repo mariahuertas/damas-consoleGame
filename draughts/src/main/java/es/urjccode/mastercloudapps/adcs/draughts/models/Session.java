@@ -16,4 +16,8 @@ public interface Session {
 
     int getDimension();
 
+    String getName();
+
+    void setName(String name);
+
 }
