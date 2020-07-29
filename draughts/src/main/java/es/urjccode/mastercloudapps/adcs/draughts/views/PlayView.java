@@ -10,14 +10,7 @@ import es.urjccode.mastercloudapps.adcs.draughts.models.Color;
 import es.urjccode.mastercloudapps.adcs.draughts.models.Coordinate;
 
 class PlayView extends SubView {
-    
-    private static final String COLOR_PARAM = "#color";
-    private static final String[] COLOR_VALUES = { "blancas", "negras" };
-    private static final String PROMPT = "Mueven las " + PlayView.COLOR_PARAM + ": ";
-    private static final String CANCEL_FORMAT = "-1";
-    private static final String MOVEMENT_FORMAT = "[1-8]{2}(\\.[1-8]{2}){1,2}";
-    private static final String ERROR_MESSAGE = "Error!!! Formato incorrecto";
-    private static final String LOST_MESSAGE = "Derrota!!! No puedes mover tus fichas!!!";
+
     private String string;
 
     PlayView() {
@@ -45,20 +38,20 @@ class PlayView extends SubView {
     }
 
     private String read(Color color) {
-        final String titleColor = PlayView.PROMPT.replace(PlayView.COLOR_PARAM ,PlayView.COLOR_VALUES[color.ordinal()]);
+        final String titleColor = Message.PROMPT.replace(Message.COLOR_PARAM ,Message.COLOR_VALUES[color.ordinal()]);
         return this.console.readString(titleColor);
     }
 
     private boolean isCanceledFormat() {
-        return string.equals(PlayView.CANCEL_FORMAT);
+        return string.equals(Message.CANCEL_FORMAT);
     }
 
     private boolean isMoveFormat() {
-        return Pattern.compile(PlayView.MOVEMENT_FORMAT).matcher(string).find();
+        return Pattern.compile(Message.MOVEMENT_FORMAT).matcher(string).find();
     }
 
     private void writeError(){
-        this.console.writeln(PlayView.ERROR_MESSAGE);
+        this.console.writeln(Message.ERROR_MESSAGE);
     }
 
     private Coordinate[] getCoordinates() {
@@ -78,7 +71,7 @@ class PlayView extends SubView {
     }
 
     private void writeLost() {
-        this.console.writeln(LOST_MESSAGE);
+        this.console.writeln(Message.LOST_MESSAGE);
     }
 
 }
