@@ -25,6 +25,7 @@ public class LogicImplementation extends Logic {
         this.resumeControllerImplementation = new ResumeControllerImplementation(this.session);
         this.acceptorControllers.put(StateValue.INITIAL, this.startControllerImplementation);
         this.acceptorControllers.put(StateValue.IN_GAME, this.playControllerImplementation);
+        this.acceptorControllers.put(StateValue.SAVING, this.saveControllerImplementation);
         this.acceptorControllers.put(StateValue.FINAL, this.resumeControllerImplementation);
         this.acceptorControllers.put(StateValue.EXIT, null);
 	}

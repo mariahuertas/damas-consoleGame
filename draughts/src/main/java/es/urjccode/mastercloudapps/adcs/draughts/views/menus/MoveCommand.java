@@ -12,17 +12,7 @@ public class MoveCommand extends Command {
 
     @Override
     protected void execute() {
-        Error error;
-        do {
-            // TODO: example:
-            //List<Color> colors = new ProposedCombinationView((PlayController)this.acceptorController).read();
-            //error = ((PlayController)this.acceptorController).addProposedCombination(colors);
-            error = null;  // remove after implementation
-            if (error != null) {
-                IO.writeError(Message.INVALID_MOVE, error.getMessage());
-            }
-        } while (error != null);
-        //new GameView((PlayController)this.acceptorController);
+
     }
 
     @Override

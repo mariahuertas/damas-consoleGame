@@ -10,7 +10,7 @@ class ExitCommand extends Command {
 
     @Override
     protected void execute() {
-        //((PlayController) this.aceptorController).next();
+        ((PlayController) this.aceptorController).next();
     }
 
     @Override

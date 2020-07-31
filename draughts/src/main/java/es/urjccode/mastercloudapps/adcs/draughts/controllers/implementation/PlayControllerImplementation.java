@@ -16,12 +16,15 @@ public class PlayControllerImplementation extends PlayController {
 
 	private CancelController cancelController;
 
+	private ExitController exitController;
+
 	public PlayControllerImplementation(Session session) {
 		super(session);
 		this.moveController = new MoveController(this.session);
 		this.undoController = new UndoController(this.session);
 		this.redoController = new RedoController(this.session);
 		this.cancelController = new CancelController(this.session);
+		this.exitController = new ExitController(this.session);
 	}
 
 	@Override
@@ -46,9 +49,8 @@ public class PlayControllerImplementation extends PlayController {
 
     @Override
     public void next() {
-        ((SessionImplementation) this.session).next();
-        //TODO: this.exitController.next(); are we sure?
-    }
+	    this.exitController.next();
+	}
 
 	@Override
 	public void undo() {
