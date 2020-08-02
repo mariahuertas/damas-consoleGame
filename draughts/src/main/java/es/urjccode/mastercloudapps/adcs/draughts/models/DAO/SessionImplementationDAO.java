@@ -1,6 +1,7 @@
 package es.urjccode.mastercloudapps.adcs.draughts.models.DAO;
 
 import es.urjccode.mastercloudapps.adcs.draughts.models.SessionImplementation;
+import es.urjccode.mastercloudapps.adcs.draughts.models.StateValue;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -10,7 +11,7 @@ import java.io.IOException;
 
 public class SessionImplementationDAO {
 
-    public static final String EXTENSION = ".klond";
+    public static final String EXTENSION = ".txt";
 
     public static final String DIRECTORY = System.getProperty("user.dir") + "/partidas";
 
@@ -51,7 +52,7 @@ public class SessionImplementationDAO {
     }
 
     public void load(String name) {
-        /*
+
         this.sessionImplementation.setName(name);
         File file = new File(SessionImplementationDAO.directory, name);
         try {
@@ -63,10 +64,9 @@ public class SessionImplementationDAO {
             e.printStackTrace();
         }
         this.sessionImplementation.setStateValue(StateValue.IN_GAME);
-        if (this.sessionImplementation.isGameFinished()) {
+        if (this.sessionImplementation.isBlocked()) {
             this.sessionImplementation.setStateValue(StateValue.FINAL);
         }
-         */
     }
 
     public String[] getGamesNames() {

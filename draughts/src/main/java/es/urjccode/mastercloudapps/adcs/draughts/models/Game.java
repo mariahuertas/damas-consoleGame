@@ -21,6 +21,10 @@ public class Game implements Originator {
 		this.reset();
 	}
 
+	public Board getBoard(){
+	    return this.board;
+    }
+
 	public void reset() {
 		for (int i = 0; i < Coordinate.getDimension(); i++)
 			for (int j = 0; j < Coordinate.getDimension(); j++) {

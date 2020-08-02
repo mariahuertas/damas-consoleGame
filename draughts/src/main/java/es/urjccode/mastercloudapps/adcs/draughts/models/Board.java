@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-class Board {
+public class Board {
 
     private Piece[][] pieces;
 
@@ -15,7 +15,7 @@ class Board {
                 this.pieces[i][j] = null;
     }
 
-    Piece getPiece(Coordinate coordinate) {
+    public Piece getPiece(Coordinate coordinate) {
         assert coordinate != null;
         return this.pieces[coordinate.getRow()][coordinate.getColumn()];
     }
