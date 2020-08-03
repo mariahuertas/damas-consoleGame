@@ -12,6 +12,15 @@ class Turn {
     this.color = this.getOppositeColor();
   }
 
+  void addTurn(String turn) {
+      if (turn.equals("BLACK")) {
+          this.color = Color.BLACK;
+      }
+      else {
+          this.color = Color.WHITE;
+      }
+  }
+
   Color getColor() {
     return this.color;
   }

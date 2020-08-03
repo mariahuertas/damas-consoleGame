@@ -8,7 +8,7 @@ public class Board {
 
     private Piece[][] pieces;
 
-    Board() {
+    public Board() {
         this.pieces = new Piece[Coordinate.getDimension()][Coordinate.getDimension()];
         for (int i = 0; i < Coordinate.getDimension(); i++)
             for (int j = 0; j < Coordinate.getDimension(); j++)
@@ -20,7 +20,7 @@ public class Board {
         return this.pieces[coordinate.getRow()][coordinate.getColumn()];
     }
 
-    void put(Coordinate coordinate, Piece piece) {
+    public void put(Coordinate coordinate, Piece piece) {
         this.pieces[coordinate.getRow()][coordinate.getColumn()] = piece;
     }
 

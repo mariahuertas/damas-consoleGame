@@ -13,7 +13,7 @@ class GameSelectCommand extends Command {
     @Override
     protected void execute() {
         IO.writeln(this.title);
-        //((StartController) this.aceptorController).start(this.title);
+        ((StartController) this.aceptorController).start(this.title);
     }
 
     @Override

@@ -21,6 +21,14 @@ public class Game implements Originator {
 		this.reset();
 	}
 
+	public void addBoard(Board board){
+	    this.board = board;
+    }
+
+    public void addTurn(String turn){
+	    this.turn.addTurn(turn);
+    }
+
 	public Board getBoard(){
 	    return this.board;
     }

@@ -5,7 +5,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import es.urjccode.mastercloudapps.adcs.draughts.models.Board;
-import es.urjccode.mastercloudapps.adcs.draughts.models.Coordinate;
 import es.urjccode.mastercloudapps.adcs.draughts.models.Game;
 
 class GameDAO implements DAO {
@@ -26,7 +25,16 @@ class GameDAO implements DAO {
 	}
 
 	public void load(BufferedReader bufferedReader) {
+        try {
+        this.game.addTurn(bufferedReader.readLine());
+        BoardDAO boardDAO = new BoardDAO(new Board());
+            boardDAO.load(bufferedReader);
 
+        this.game.addBoard(boardDAO.getBoard());
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 	}
 
 }
