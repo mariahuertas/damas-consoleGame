@@ -4,37 +4,33 @@ import java.io.BufferedReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.DAOSerializer;
 import es.urjccode.mastercloudapps.adcs.draughts.models.Board;
 import es.urjccode.mastercloudapps.adcs.draughts.models.Game;
 
-class GameDAO implements DAO {
+class GameDAO {
 
-	private Game game;
+    private Game game;
 
-	GameDAO(Game game) {
-		this.game = game;
-	}
+    GameDAO(Game game) {
+        this.game = game;
+    }
 
-	public void save(FileWriter fileWriter) {
- 		try {
-            fileWriter.write(this.game.getTurnColor() + "\n");
-            new BoardDAO(this.game.getBoard()).save(fileWriter);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
-	public void load(BufferedReader bufferedReader) {
+    public void save() {
         try {
-        this.game.addTurn(bufferedReader.readLine());
-        BoardDAO boardDAO = new BoardDAO(new Board());
-            boardDAO.load(bufferedReader);
-
-        this.game.addBoard(boardDAO.getBoard());
-
-        } catch (IOException e) {
+            DAOSerializer.serialize(this.game);
+        } catch (Exception e) {
             e.printStackTrace();
         }
-	}
+    }
 
+    public void load(BufferedReader bufferedReader) {
+        try {
+            this.game = (Game)DAOSerializer.deserialize(this.game);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

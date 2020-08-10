@@ -1,8 +1,9 @@
 package es.urjccode.mastercloudapps.adcs.draughts.models;
 
+import java.io.Serializable;
 import java.util.List;
 
-public abstract class Piece {
+public abstract class Piece implements Serializable {
 
 	protected Color color;
 	private static String[] CODES = {"b", "n"};

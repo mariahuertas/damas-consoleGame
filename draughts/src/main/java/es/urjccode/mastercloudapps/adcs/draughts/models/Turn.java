@@ -1,6 +1,8 @@
 package es.urjccode.mastercloudapps.adcs.draughts.models;
 
-class Turn {
+import java.io.Serializable;
+
+class Turn implements Serializable {
 
   private Color color;
 

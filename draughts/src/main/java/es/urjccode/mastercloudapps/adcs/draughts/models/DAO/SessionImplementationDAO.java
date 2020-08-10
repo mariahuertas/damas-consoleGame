@@ -44,7 +44,7 @@ public class SessionImplementationDAO {
         File file = new File(SessionImplementationDAO.directory, name);
         try {
             FileWriter fileWriter = new FileWriter(file);
-            this.gameDAO.save(fileWriter);
+            this.gameDAO.save();
             fileWriter.close();
         } catch (IOException e) {
             e.printStackTrace();

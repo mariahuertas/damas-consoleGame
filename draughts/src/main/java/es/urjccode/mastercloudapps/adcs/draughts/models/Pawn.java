@@ -1,5 +1,7 @@
 package es.urjccode.mastercloudapps.adcs.draughts.models;
 
+import java.io.Serializable;
+
 public class Pawn extends Piece {
 
     private static char[] CHARACTERS = {'b', 'n'};

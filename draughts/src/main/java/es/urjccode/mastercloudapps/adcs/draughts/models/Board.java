@@ -1,10 +1,11 @@
 package es.urjccode.mastercloudapps.adcs.draughts.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Board {
+public class Board implements Serializable {
 
     private Piece[][] pieces;
 

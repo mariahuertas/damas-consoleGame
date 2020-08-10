@@ -1,5 +1,6 @@
 package es.urjccode.mastercloudapps.adcs.draughts.models;
 
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.DAOField;
 import es.urjccode.mastercloudapps.adcs.draughts.utils.Memento;
 import es.urjccode.mastercloudapps.adcs.draughts.utils.Originator;
 
@@ -7,8 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Game implements Originator {
-
+    @DAOField("board")
 	private Board board;
+    @DAOField("turn")
 	private Turn turn;
 
 	Game(Board board) {
