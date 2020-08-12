@@ -5,13 +5,15 @@ import es.urjccode.mastercloudapps.adcs.draughts.controllers.AceptorController;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.implementation.LogicImplementation;
 import es.urjccode.mastercloudapps.adcs.draughts.views.View;
 
+import java.lang.reflect.InvocationTargetException;
+
 class Draughts {
 
     private View view;
 
     private Logic logic;
 
-    private Draughts(){
+    private Draughts() throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
         this.view = new View();
         this.logic = new LogicImplementation();
     }
@@ -25,7 +27,7 @@ class Draughts {
 		} while (acceptorController != null);
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
         new Draughts().play();
     }
 

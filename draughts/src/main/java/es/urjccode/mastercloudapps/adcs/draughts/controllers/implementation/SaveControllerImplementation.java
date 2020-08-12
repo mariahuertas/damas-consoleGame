@@ -1,15 +1,18 @@
 package es.urjccode.mastercloudapps.adcs.draughts.controllers.implementation;
 
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.ControllerImplementation;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.SaveController;
 import es.urjccode.mastercloudapps.adcs.draughts.models.DAO.SessionImplementationDAO;
 import es.urjccode.mastercloudapps.adcs.draughts.models.Session;
 import es.urjccode.mastercloudapps.adcs.draughts.models.SessionImplementation;
+import es.urjccode.mastercloudapps.adcs.draughts.models.StateValue;
 
+@ControllerImplementation(StateValue.SAVING)
 public class SaveControllerImplementation extends SaveController {
 
     private final SessionImplementationDAO sessionImplementationDAO;
 
-    SaveControllerImplementation(Session session, SessionImplementationDAO sessionImplementationDAO) {
+    public SaveControllerImplementation(Session session, SessionImplementationDAO sessionImplementationDAO) {
         super(session);
         this.sessionImplementationDAO = sessionImplementationDAO;
     }

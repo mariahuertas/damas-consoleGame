@@ -2,10 +2,12 @@ package es.urjccode.mastercloudapps.adcs.draughts.controllers.implementation;
 
 import java.util.List;
 
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.ControllerImplementation;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.*;
 import es.urjccode.mastercloudapps.adcs.draughts.models.*;
 import es.urjccode.mastercloudapps.adcs.draughts.models.Error;
 
+@ControllerImplementation(StateValue.IN_GAME)
 public class PlayControllerImplementation extends PlayController {
 
 	private MoveController moveController;
