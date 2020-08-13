@@ -1,9 +1,11 @@
 package es.urjccode.mastercloudapps.adcs.draughts.controllers;
 
-public interface ControllerVisitor {
+import java.lang.reflect.InvocationTargetException;
 
-	void visit(StartController startController);
+public interface ControllerVisitor {
+    void visit(AceptorController aceptorController);
+	/*void visit(StartController startController);
 	void visit(PlayController playController);
 	void visit(ResumeController resumeController);
-	void visit(SaveController saveController);
+	void visit(SaveController saveController);*/
 }

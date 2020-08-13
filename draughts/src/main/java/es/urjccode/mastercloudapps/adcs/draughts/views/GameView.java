@@ -34,4 +34,8 @@ class GameView extends SubView {
         this.console.writeln((row + 1) + "");
     }
 
+    @Override
+    void interact(AceptorController aceptorController) {
+
+    }
 }

@@ -1,11 +1,12 @@
 package es.urjccode.mastercloudapps.adcs.draughts.views.menus;
 
+import es.urjccode.mastercloudapps.adcs.draughts.controllers.AceptorController;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.StartController;
 
 class OpenGameCommand extends Command {
 
-    protected OpenGameCommand(StartController startController) {
-        super(CommandTitle.OPENGAME_COMMAND.getTitle(), startController);
+    protected OpenGameCommand(AceptorController aceptorController) {
+        super(CommandTitle.OPENGAME_COMMAND.getTitle(), aceptorController);
     }
 
     @Override

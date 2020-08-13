@@ -1,20 +1,24 @@
 package es.urjccode.mastercloudapps.adcs.draughts.views;
 
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.SubViewImplementation;
+import es.urjccode.mastercloudapps.adcs.draughts.controllers.AceptorController;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.StartController;
+import es.urjccode.mastercloudapps.adcs.draughts.models.StateValue;
 import es.urjccode.mastercloudapps.adcs.draughts.views.menus.StartMenu;
 
+@SubViewImplementation(StateValue.INITIAL)
 class StartView extends SubView {
 
-    StartView(){
+    public StartView(){
         super();
     }
 
-    void interact(StartController startController) {
-        assert startController != null;
+    void interact(AceptorController aceptorController) {
+        assert aceptorController != null;
         this.console.writeln(Message.GAME_TITLE);
         this.console.writeln(Message.RULES);
-        new StartMenu(startController).execute();
-        new GameView().write(startController);
+        new StartMenu(aceptorController).execute();
+        new GameView().write(aceptorController);
     }
 
 }

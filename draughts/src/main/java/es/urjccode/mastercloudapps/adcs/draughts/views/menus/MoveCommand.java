@@ -1,5 +1,6 @@
 package es.urjccode.mastercloudapps.adcs.draughts.views.menus;
 
+import es.urjccode.mastercloudapps.adcs.draughts.controllers.AceptorController;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.PlayController;
 import es.urjccode.mastercloudapps.adcs.draughts.models.Error;
 import es.urjccode.mastercloudapps.adcs.draughts.utils.IO;
@@ -8,7 +9,7 @@ import es.urjccode.mastercloudapps.adcs.draughts.views.MoveView;
 
 public class MoveCommand extends Command {
 
-    MoveCommand(PlayController playController) {
+    MoveCommand(AceptorController playController) {
         super(CommandTitle.MOVE_COMMAND.getTitle(), playController);
     }
 

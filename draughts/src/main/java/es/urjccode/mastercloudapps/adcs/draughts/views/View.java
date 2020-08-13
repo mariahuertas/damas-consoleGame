@@ -1,20 +1,37 @@
 package es.urjccode.mastercloudapps.adcs.draughts.views;
 
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.ControllerImplementation;
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.SubViewImplementation;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.*;
-import es.urjccode.mastercloudapps.adcs.draughts.utils.YesNoDialog;
+import es.urjccode.mastercloudapps.adcs.draughts.models.DAO.SessionImplementationDAO;
+import es.urjccode.mastercloudapps.adcs.draughts.models.Session;
+import es.urjccode.mastercloudapps.adcs.draughts.models.StateValue;
+import org.reflections.Reflections;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
+import java.util.Set;
 
 public class View implements ControllerVisitor {
 
-    private StartView startView;
-    private PlayView playView;
-    private SaveView saveView;
-    private ResumeView resumeView;
+    private HashMap<StateValue, SubView> annotatedViewsMap;
 
-    public View(){
-        this.startView = new StartView();
-        this.playView = new PlayView();
-        this.saveView = new SaveView();
-        this.resumeView = new ResumeView();
+    public View() throws IllegalAccessException, InvocationTargetException, InstantiationException, NoSuchMethodException {
+
+        this.annotatedViewsMap = new HashMap<StateValue, SubView>();
+
+        Reflections reflections = new Reflections("es.urjccode.mastercloudapps.adcs");
+        Set<Class<?>> annotatedViews = reflections.getTypesAnnotatedWith(SubViewImplementation.class);
+        Set<Class<?>> annotatedControllers = reflections.getTypesAnnotatedWith(ControllerImplementation.class);
+
+        for(Class<?> subViewClass: annotatedViews) {
+            SubViewImplementation annotation = subViewClass.getAnnotation(SubViewImplementation.class);
+            Constructor constructor = subViewClass.getConstructor();
+            SubView subViewInstance = (SubView) constructor.newInstance();
+            annotatedViewsMap.put(annotation.value(), subViewInstance);
+        }
+
     }
 
     public void interact(AceptorController controller) {
@@ -23,24 +40,10 @@ public class View implements ControllerVisitor {
     }
 
     @Override
-    public void visit(StartController startController) {
-        assert startController != null;
-        this.startView.interact(startController);
-    }
-
-    @Override
-    public void visit(PlayController playController) {
-        assert playController != null;
-        this.playView.interact(playController);
-    }
-
-    @Override
-    public void visit(SaveController saveController) {
-        this.saveView.interact(saveController);
-    }
-
-    @Override
-    public void visit(ResumeController resumeController) {
-        this.resumeView.interact(resumeController);
+    public void visit(AceptorController aceptorController)  {
+        Class<?> controllerClass = aceptorController.getClass();
+        ControllerImplementation annotation = controllerClass.getAnnotation(ControllerImplementation.class);
+        SubView matchingView = this.annotatedViewsMap.get(annotation.value());
+        matchingView.interact(aceptorController);
     }
 }

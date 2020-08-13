@@ -1,25 +1,22 @@
 package es.urjccode.mastercloudapps.adcs.draughts.views;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.regex.Pattern;
-
+import es.urjccode.mastercloudapps.adcs.draughts.controllers.AceptorController;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.PlayController;
-import es.urjccode.mastercloudapps.adcs.draughts.models.Error;
-import es.urjccode.mastercloudapps.adcs.draughts.models.Color;
-import es.urjccode.mastercloudapps.adcs.draughts.models.Coordinate;
+import es.urjccode.mastercloudapps.adcs.draughts.models.StateValue;
 import es.urjccode.mastercloudapps.adcs.draughts.views.menus.PlayMenu;
-import es.urjccode.mastercloudapps.adcs.draughts.views.menus.StartMenu;
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.SubViewImplementation;
 
+
+@SubViewImplementation(StateValue.IN_GAME)
 class PlayView extends SubView {
 
-    PlayView() {
+    public PlayView() {
         super();
     }
 
-    void interact(PlayController playController) {
-        new PlayMenu(playController).execute();
-        new GameView().write(playController);
+    void interact(AceptorController aceptorController) {
+        new PlayMenu(aceptorController).execute();
+        new GameView().write(aceptorController);
     }
 
 
