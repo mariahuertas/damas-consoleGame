@@ -1,13 +1,10 @@
 package es.urjccode.mastercloudapps.adcs.draughts.annotations;
 
-import es.urjccode.mastercloudapps.adcs.draughts.models.Game;
-
 import java.io.*;
 import java.lang.reflect.Field;
 import java.util.*;
 
 import static java.util.Objects.requireNonNull;
-import static java.util.stream.Collectors.joining;
 
 public class DAOSerializer {
 
@@ -29,7 +26,6 @@ public class DAOSerializer {
 
     public static Object deserialize(Object object) throws Exception {
         Class<?> objectClass = requireNonNull(object).getClass();
-        Game deserializeGame = (Game)objectClass.newInstance();
         List<String> fileNames = new ArrayList<String>();
         for (Field field : objectClass.getDeclaredFields()) {
             field.setAccessible(true);
