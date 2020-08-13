@@ -44,14 +44,12 @@ public class SessionImplementation implements Session{
     public void resume() {
         this.game.reset();
         this.state.reset();
-        //this.registry.reset();
         this.name = null;
     }
 
     public Error move(Coordinate... coordinates) {
         Error error = this.game.move(coordinates);
         if (error == null) {
-            //this.registry.registry();
         }
         return error;
     }
@@ -78,7 +76,6 @@ public class SessionImplementation implements Session{
 
     public void cancel() {
         this.game.cancel();
-        //this.registry.registry();
     }
 
     public boolean hasName() {

@@ -9,15 +9,12 @@ public class RedoCommand extends Command {
         super(CommandTitle.REDO_COMMAND.getTitle(), playController);
     }
 
-    // TODO: remove comments when redo and redoable are added
     @Override
     protected void execute() {
-        // ((PlayController) this.aceptorController).redo();
     }
 
     @Override
     public boolean isActive() {
-        return true; // remove after implementation
-        // return ((PlayController) this.aceptorController).redoable();
+        return true;
     }
 }
