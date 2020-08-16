@@ -17,7 +17,6 @@ public class DAOSerializer {
         for (Field field : objectClass.getDeclaredFields()) {
             field.setAccessible(true);
             if (field.isAnnotationPresent(DAOField.class)) {
-                System.out.println(getSerializedKey(field));
                 serializationElements.put(getSerializedKey(field), field.get(object));
             }
         }

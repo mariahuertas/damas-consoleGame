@@ -14,25 +14,43 @@ public class Registry {
         this.originator = originator;
         this.undoCount = 0;
         this.mementoList = new ArrayList<>();
-        this.mementoList.add(undoCount, this.originator.createMemento());
+        try {
+            this.mementoList.add(undoCount, this.originator.createMemento());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void registry() {
+
         for (int i = 0; i < this.undoCount; i++) {
             this.mementoList.remove(0);
         }
         this.undoCount = 0;
-        this.mementoList.add(this.undoCount, this.originator.createMemento());
+        try {
+            this.mementoList.add(this.undoCount, this.originator.createMemento());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    public void undo(Originator originator) {
+    public void undo(Originator originator)  {
         this.undoCount++;
-        originator.restore(this.mementoList.get(this.undoCount));
+        try {
+            originator.restore(this.mementoList.get(this.undoCount));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void redo(Originator originator) {
         this.undoCount--;
-        originator.restore(this.mementoList.get(this.undoCount));
+        System.out.println("redo!");
+        try {
+            originator.restore(this.mementoList.get(this.undoCount));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public boolean undoable() {
@@ -46,6 +64,10 @@ public class Registry {
     public void reset() {
         this.mementoList = new ArrayList<>();
         this.undoCount = 0;
-        this.mementoList.add(undoCount, this.originator.createMemento());
+        try {
+            this.mementoList.add(undoCount, this.originator.createMemento());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

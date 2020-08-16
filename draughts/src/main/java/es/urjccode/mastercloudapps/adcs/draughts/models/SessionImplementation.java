@@ -50,6 +50,7 @@ public class SessionImplementation implements Session{
     public Error move(Coordinate... coordinates) {
         Error error = this.game.move(coordinates);
         if (error == null) {
+            this.registry.registry();
         }
         return error;
     }

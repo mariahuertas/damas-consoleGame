@@ -1,12 +1,14 @@
 package es.urjccode.mastercloudapps.adcs.draughts.models;
 
+import es.urjccode.mastercloudapps.adcs.draughts.utils.MementoAttribute;
+
 import java.io.Serializable;
 
-class Turn implements Serializable {
+class Turn extends MementoAttribute implements Serializable {
 
   private Color color;
 
-  Turn() {
+  public Turn() {
     this.color = Color.WHITE;
   }
 
@@ -58,4 +60,9 @@ class Turn implements Serializable {
     return true;
   }
 
+    @Override
+    public void initializeMemento(MementoAttribute mementoAttribute) {
+        Turn mementoTurn = (Turn) mementoAttribute;
+        this.color = mementoTurn.getColor();
+    }
 }

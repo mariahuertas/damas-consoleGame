@@ -1,11 +1,13 @@
 package es.urjccode.mastercloudapps.adcs.draughts.models;
 
+import es.urjccode.mastercloudapps.adcs.draughts.utils.MementoAttribute;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Board implements Serializable {
+            public class Board extends MementoAttribute implements Serializable {
 
     private Piece[][] pieces;
 
@@ -16,9 +18,24 @@ public class Board implements Serializable {
                 this.pieces[i][j] = null;
     }
 
+    public void setPieces(Piece[][] pieces){
+        for (int i = 0; i < Coordinate.getDimension(); i++) {
+            for (int j = 0; j < Coordinate.getDimension(); j++) {
+                Piece pawn = null;
+                if (pieces[i][j] != null)
+                    pawn = new Pawn(pieces[i][j].getColor());
+                this.pieces[i][j] = pawn;
+            }
+        }
+    }
+
     public Piece getPiece(Coordinate coordinate) {
         assert coordinate != null;
         return this.pieces[coordinate.getRow()][coordinate.getColumn()];
+    }
+
+    public Piece[][] getPieces() {
+        return this.pieces;
     }
 
     public void put(Coordinate coordinate, Piece piece) {
@@ -121,4 +138,9 @@ public class Board implements Serializable {
         return true;
     }
 
+    @Override
+    public void initializeMemento(MementoAttribute mementoAttribute) {
+        Board mementoBoard = (Board) mementoAttribute;
+        this.setPieces(mementoBoard.getPieces());
+    }
 }

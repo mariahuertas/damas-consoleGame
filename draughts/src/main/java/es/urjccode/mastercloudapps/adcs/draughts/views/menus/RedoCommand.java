@@ -11,10 +11,12 @@ public class RedoCommand extends Command {
 
     @Override
     protected void execute() {
+        ((PlayController)this.aceptorController).redo();
     }
 
     @Override
     public boolean isActive() {
-        return true;
+        return ((PlayController)this.aceptorController).redoable();
+
     }
 }
