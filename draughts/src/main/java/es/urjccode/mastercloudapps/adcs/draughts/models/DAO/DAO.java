@@ -1,12 +1,9 @@
 package es.urjccode.mastercloudapps.adcs.draughts.models.DAO;
 
-import java.io.BufferedReader;
-import java.io.FileWriter;
-
 interface DAO {
 
-	void save(FileWriter fileWriter);
+	void save();
 
-	void load(BufferedReader bufferedReader);
+	void load();
 
 }

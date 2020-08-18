@@ -3,9 +3,7 @@ package es.urjccode.mastercloudapps.adcs.draughts.models.DAO;
 import es.urjccode.mastercloudapps.adcs.draughts.models.SessionImplementation;
 import es.urjccode.mastercloudapps.adcs.draughts.models.StateValue;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -52,17 +50,9 @@ public class SessionImplementationDAO {
     }
 
     public void load(String name) {
-
         this.sessionImplementation.setName(name);
-        File file = new File(SessionImplementationDAO.directory, name);
-        try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-            this.gameDAO.load(bufferedReader);
-            this.sessionImplementation.resetRegistry();
-            bufferedReader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        this.gameDAO.load();
+        this.sessionImplementation.resetRegistry();
         this.sessionImplementation.setStateValue(StateValue.IN_GAME);
         if (this.sessionImplementation.isBlocked()) {
             this.sessionImplementation.setStateValue(StateValue.FINAL);
