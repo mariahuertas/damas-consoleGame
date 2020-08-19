@@ -15,7 +15,7 @@ public class View implements ControllerVisitor {
 
     private HashMap<StateValue, SubView> annotatedViewsMap;
 
-    public View() throws IllegalAccessException, InvocationTargetException, InstantiationException, NoSuchMethodException {
+    public View() {
 
         this.annotatedViewsMap = new HashMap<StateValue, SubView>();
 

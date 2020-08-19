@@ -13,7 +13,7 @@ class Draughts {
 
     private Logic logic;
 
-    private Draughts() throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+    private Draughts()  {
         this.view = new View();
         this.logic = new LogicImplementation();
     }
