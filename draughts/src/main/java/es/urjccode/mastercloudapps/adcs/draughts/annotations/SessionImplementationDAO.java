@@ -1,7 +1,6 @@
-package es.urjccode.mastercloudapps.adcs.draughts.models.DAO;
+package es.urjccode.mastercloudapps.adcs.draughts.annotations;
 
 import es.urjccode.mastercloudapps.adcs.draughts.models.SessionImplementation;
-import es.urjccode.mastercloudapps.adcs.draughts.models.StateValue;
 
 import java.io.File;
 import java.io.FileWriter;

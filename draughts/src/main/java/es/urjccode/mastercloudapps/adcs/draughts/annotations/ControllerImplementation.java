@@ -1,7 +1,5 @@
 package es.urjccode.mastercloudapps.adcs.draughts.annotations;
 
-import es.urjccode.mastercloudapps.adcs.draughts.models.StateValue;
-
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

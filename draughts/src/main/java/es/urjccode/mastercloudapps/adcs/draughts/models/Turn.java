@@ -1,10 +1,10 @@
 package es.urjccode.mastercloudapps.adcs.draughts.models;
 
-import es.urjccode.mastercloudapps.adcs.draughts.utils.MementoAttribute;
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.MementoAttribute;
 
 import java.io.Serializable;
 
-class Turn extends MementoAttribute implements Serializable {
+public class Turn extends MementoAttribute implements Serializable {
 
   private Color color;
 

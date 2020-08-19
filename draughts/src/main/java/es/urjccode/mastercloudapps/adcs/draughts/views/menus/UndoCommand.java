@@ -1,6 +1,6 @@
 package es.urjccode.mastercloudapps.adcs.draughts.views.menus;
 
-import es.urjccode.mastercloudapps.adcs.draughts.controllers.AceptorController;
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.AceptorController;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.PlayController;
 
 public class UndoCommand extends Command {

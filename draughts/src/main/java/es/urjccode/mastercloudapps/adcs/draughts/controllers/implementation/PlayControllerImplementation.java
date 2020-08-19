@@ -1,11 +1,11 @@
 package es.urjccode.mastercloudapps.adcs.draughts.controllers.implementation;
 
-import java.util.List;
-
 import es.urjccode.mastercloudapps.adcs.draughts.annotations.ControllerImplementation;
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.Session;
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.StateValue;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.*;
 import es.urjccode.mastercloudapps.adcs.draughts.models.*;
-import es.urjccode.mastercloudapps.adcs.draughts.models.DAO.SessionImplementationDAO;
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.SessionImplementationDAO;
 import es.urjccode.mastercloudapps.adcs.draughts.models.Error;
 
 @ControllerImplementation(StateValue.IN_GAME)
@@ -23,11 +23,11 @@ public class PlayControllerImplementation extends PlayController {
 
 	public PlayControllerImplementation(Session session, SessionImplementationDAO sessionImplementationDAO) {
 		super(session);
-		this.moveController = new MoveController(this.session);
-		this.undoController = new UndoController(this.session);
-		this.redoController = new RedoController(this.session);
-		this.cancelController = new CancelController(this.session);
-		this.exitController = new ExitController(this.session);
+		this.moveController = new MoveController((SessionImplementation) this.session);
+		this.undoController = new UndoController((SessionImplementation) this.session);
+		this.redoController = new RedoController((SessionImplementation) this.session);
+		this.cancelController = new CancelController((SessionImplementation) this.session);
+		this.exitController = new ExitController((SessionImplementation) this.session);
 	}
 
 	@Override
@@ -42,7 +42,7 @@ public class PlayControllerImplementation extends PlayController {
 
     @Override
     public Color getColor() {
-        return this.session.getTurnColor();
+        return ((SessionImplementation)this.session).getTurnColor();
     }
 
     @Override

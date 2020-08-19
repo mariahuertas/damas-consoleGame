@@ -57,7 +57,7 @@ public class GameBuilderTest {
 
     @Test
     public void testGivenGameBuilderWhenCorrectRowsThenOk() {
-        Game game = this.gameBuilder.rows(
+        GameImplementation game = this.gameBuilder.rows(
             " n      ",
             "        ",
             "        ",

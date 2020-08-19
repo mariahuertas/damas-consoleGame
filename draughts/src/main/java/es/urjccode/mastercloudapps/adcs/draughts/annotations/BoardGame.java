@@ -1,19 +1,16 @@
-package es.urjccode.mastercloudapps.adcs.draughts;
+package es.urjccode.mastercloudapps.adcs.draughts.annotations;
 
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.Logic;
-import es.urjccode.mastercloudapps.adcs.draughts.controllers.AceptorController;
-import es.urjccode.mastercloudapps.adcs.draughts.controllers.implementation.LogicImplementation;
-import es.urjccode.mastercloudapps.adcs.draughts.views.View;
 
 import java.lang.reflect.InvocationTargetException;
 
-class Draughts {
+class BoardGame {
 
     private View view;
 
     private Logic logic;
 
-    private Draughts()  {
+    private BoardGame()  {
         this.view = new View();
         this.logic = new LogicImplementation();
     }
@@ -28,7 +25,7 @@ class Draughts {
     }
 
     public static void main(String[] args) throws NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
-        new Draughts().play();
+        new BoardGame().play();
     }
 
 }

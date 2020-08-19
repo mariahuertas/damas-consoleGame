@@ -1,10 +1,11 @@
 package es.urjccode.mastercloudapps.adcs.draughts.controllers;
-import es.urjccode.mastercloudapps.adcs.draughts.models.Session;
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.AceptorController;
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.Session;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import es.urjccode.mastercloudapps.adcs.draughts.models.StateValue;
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.StateValue;
 
 public class Logic {
 

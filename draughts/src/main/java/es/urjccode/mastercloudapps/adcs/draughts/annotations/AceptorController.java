@@ -1,19 +1,17 @@
-package es.urjccode.mastercloudapps.adcs.draughts.controllers;
+package es.urjccode.mastercloudapps.adcs.draughts.annotations;
 
 import es.urjccode.mastercloudapps.adcs.draughts.models.Coordinate;
-import es.urjccode.mastercloudapps.adcs.draughts.models.Game;
 import es.urjccode.mastercloudapps.adcs.draughts.models.Piece;
-import es.urjccode.mastercloudapps.adcs.draughts.models.State;
-import es.urjccode.mastercloudapps.adcs.draughts.models.Session;
+import es.urjccode.mastercloudapps.adcs.draughts.models.SessionImplementation;
 
 public abstract class AceptorController extends Controller {
 
-    AceptorController(Session session) {
+    public AceptorController(Session session) {
         super(session);
     }
 
 	public Piece getPiece(Coordinate coordinate) {
-        return this.session.getPiece(coordinate);
+        return ((SessionImplementation)this.session).getPiece(coordinate);
         }
 
 	abstract public void accept(ControllerVisitor controllersVisitor);

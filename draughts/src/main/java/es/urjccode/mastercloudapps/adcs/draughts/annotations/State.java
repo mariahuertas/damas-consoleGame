@@ -1,4 +1,4 @@
-package es.urjccode.mastercloudapps.adcs.draughts.models;
+package es.urjccode.mastercloudapps.adcs.draughts.annotations;
 
 public class State {
 

@@ -1,7 +1,7 @@
-package es.urjccode.mastercloudapps.adcs.draughts.models;
+package es.urjccode.mastercloudapps.adcs.draughts.annotations;
 
 
-import es.urjccode.mastercloudapps.adcs.draughts.utils.Memento;
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.Memento;
 
 import java.util.HashMap;
 

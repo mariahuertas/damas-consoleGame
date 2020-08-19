@@ -1,20 +1,10 @@
 package es.urjccode.mastercloudapps.adcs.draughts.models;
 
-import es.urjccode.mastercloudapps.adcs.draughts.annotations.DAOField;
-import es.urjccode.mastercloudapps.adcs.draughts.annotations.MementoField;
-import es.urjccode.mastercloudapps.adcs.draughts.utils.Memento;
-import es.urjccode.mastercloudapps.adcs.draughts.utils.MementoAttribute;
-import es.urjccode.mastercloudapps.adcs.draughts.utils.Originator;
-
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
-import static java.util.Objects.requireNonNull;
-
-public class Game implements Originator {
+public class GameImplementation extends Game{
 
     @DAOField("board")
     @MementoField("board")
@@ -24,27 +14,15 @@ public class Game implements Originator {
     @MementoField("turn")
 	private Turn turn;
 
-	Game(Board board) {
+	GameImplementation(Board board) {
 		this.turn = new Turn();
 		this.board = board;
 	}
 
-	public Game() {
+	public GameImplementation() {
 		this(new Board());
 		this.reset();
 	}
-
-	public void addBoard(Board board){
-	    this.board = board;
-    }
-
-    public void addTurn(String turn){
-	    this.turn.addTurn(turn);
-    }
-
-	public Board getBoard(){
-	    return this.board;
-    }
 
 	public void reset() {
 		for (int i = 0; i < Coordinate.getDimension(); i++)
@@ -212,7 +190,7 @@ public class Game implements Originator {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Game other = (Game) obj;
+		GameImplementation other = (GameImplementation) obj;
 		if (board == null) {
 			if (other.board != null)
 				return false;
@@ -226,48 +204,6 @@ public class Game implements Originator {
 		return true;
 	}
 
-    @Override
-    public Memento createMemento() throws Exception {
 
-        GameMemento gameMemento = new GameMemento();
-        HashMap<String, Object> mementoFields = new HashMap<String, Object>();
-        Class<?> objectClass = requireNonNull(this).getClass();
-
-        for (Field field : objectClass.getDeclaredFields()) {
-
-            field.setAccessible(true);
-
-            if (field.isAnnotationPresent(MementoField.class)) {
-
-                String annotationValue = field.getAnnotation(MementoField.class).value();
-                Class<?> fieldClass = field.get(this).getClass();
-
-                Constructor constructor = fieldClass.getConstructor();
-                MementoAttribute mementoAttribute = (MementoAttribute) constructor.newInstance();
-                mementoAttribute.initializeMemento((MementoAttribute)field.get(this));
-                mementoFields.put(annotationValue, mementoAttribute);
-            }
-        }
-
-        gameMemento.setMemento(mementoFields);
-        return gameMemento;
-    }
-
-    @Override
-    public void restore(Memento memento) throws Exception {
-
-        GameMemento gameMemento = (GameMemento) memento;
-        HashMap<String, Object> mementoFields = gameMemento.getMemento();
-        Class<?> objectClass = requireNonNull(this).getClass();
-
-        for (Field field : objectClass.getDeclaredFields()) {
-            field.setAccessible(true);
-            if (field.isAnnotationPresent(MementoField.class)) {
-                String annotationValue = field.getAnnotation(MementoField.class).value();
-                Object mementoField = mementoFields.get(annotationValue);
-                field.set(this, mementoField);
-            }
-        }
-    }
 
 }

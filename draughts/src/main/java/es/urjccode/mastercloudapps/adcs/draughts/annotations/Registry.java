@@ -1,4 +1,4 @@
-package es.urjccode.mastercloudapps.adcs.draughts.utils;
+package es.urjccode.mastercloudapps.adcs.draughts.annotations;
 
 import java.util.ArrayList;
 

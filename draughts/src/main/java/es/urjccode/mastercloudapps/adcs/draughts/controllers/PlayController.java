@@ -1,5 +1,8 @@
 package es.urjccode.mastercloudapps.adcs.draughts.controllers;
 
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.AceptorController;
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.ControllerVisitor;
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.Session;
 import es.urjccode.mastercloudapps.adcs.draughts.models.Error;
 import es.urjccode.mastercloudapps.adcs.draughts.models.*;
 

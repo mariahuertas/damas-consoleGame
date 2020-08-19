@@ -1,6 +1,6 @@
 package es.urjccode.mastercloudapps.adcs.draughts.models;
 
-import es.urjccode.mastercloudapps.adcs.draughts.utils.MementoAttribute;
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.MementoAttribute;
 
 import java.io.Serializable;
 import java.util.ArrayList;

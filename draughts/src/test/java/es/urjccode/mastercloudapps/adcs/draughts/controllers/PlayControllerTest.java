@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.Session;
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.State;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.implementation.PlayControllerImplementation;
 import es.urjccode.mastercloudapps.adcs.draughts.models.*;
 import org.junit.Test;
@@ -14,7 +16,7 @@ public class PlayControllerTest {
 
     @Test
     public void testGivenPlayControllerWhenMoveThenOk() {
-        Game game = new GameBuilder().build();
+        GameImplementation game = new GameBuilder().build();
         Session session = new SessionImplementation(game, new State());
         playController = new PlayControllerImplementation(session, null);
         Coordinate origin = new Coordinate(5, 0);
@@ -26,7 +28,7 @@ public class PlayControllerTest {
 
     @Test
     public void testGivenPlayControllerWhenMoveWithoutPiecesThenIsBlocked() {
-        Game game = new GameBuilder().rows(
+        GameImplementation game = new GameBuilder().rows(
             "        ",
             "        ",
             "        ",
@@ -46,7 +48,7 @@ public class PlayControllerTest {
 
     @Test
     public void testGivenPlayControllerWhenMoveWithoutMovementsThenIsBlocked() {
-        Game game = new GameBuilder().rows(
+        GameImplementation game = new GameBuilder().rows(
             "        ",
             "        ",
             "   n    ",
@@ -66,7 +68,7 @@ public class PlayControllerTest {
 
     @Test
     public void testGivenPlayControllerWhenCancelThenOk() {
-        Game game = new GameBuilder().build();
+        GameImplementation game = new GameBuilder().build();
         Session session = new SessionImplementation(game, new State());
         playController = new PlayControllerImplementation(session, null);
         playController.cancel();

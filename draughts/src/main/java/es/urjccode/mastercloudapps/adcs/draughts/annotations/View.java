@@ -1,13 +1,13 @@
-package es.urjccode.mastercloudapps.adcs.draughts.views;
+package es.urjccode.mastercloudapps.adcs.draughts.annotations;
 
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.AceptorController;
 import es.urjccode.mastercloudapps.adcs.draughts.annotations.ControllerImplementation;
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.ControllerVisitor;
 import es.urjccode.mastercloudapps.adcs.draughts.annotations.SubViewImplementation;
-import es.urjccode.mastercloudapps.adcs.draughts.controllers.*;
-import es.urjccode.mastercloudapps.adcs.draughts.models.StateValue;
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.StateValue;
 import org.reflections.Reflections;
 
 import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Set;
 

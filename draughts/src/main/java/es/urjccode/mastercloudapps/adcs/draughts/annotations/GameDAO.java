@@ -1,7 +1,7 @@
-package es.urjccode.mastercloudapps.adcs.draughts.models.DAO;
+package es.urjccode.mastercloudapps.adcs.draughts.annotations;
 
-import es.urjccode.mastercloudapps.adcs.draughts.annotations.DAOSerializer;
-import es.urjccode.mastercloudapps.adcs.draughts.models.Game;
+
+import es.urjccode.mastercloudapps.adcs.draughts.models.GameImplementation;
 
 class GameDAO implements DAO {
 
@@ -23,7 +23,7 @@ class GameDAO implements DAO {
     @Override
     public void load() {
         try {
-            this.game = (Game)DAOSerializer.deserialize(this.game);
+            this.game = (GameImplementation)DAOSerializer.deserialize(this.game);
         } catch (Exception e) {
             e.printStackTrace();
         }

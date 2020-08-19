@@ -27,11 +27,11 @@ public class GameBuilder {
         return this;
     }
 
-    public Game build() {
+    public GameImplementation build() {
         if (this.strings.size() == 0)
-            return new Game();
+            return new GameImplementation();
         Board board = new Board();
-        Game game = new Game(board);
+        GameImplementation game = new GameImplementation(board);
         assert this.strings.size() == Coordinate.getDimension();
         this.setColor(game, board);
         for (int i = 0; i < this.strings.size(); i++) {
@@ -40,7 +40,7 @@ public class GameBuilder {
         return game;
     }
 
-    private void setColor(Game game, Board board) {
+    private void setColor(GameImplementation game, Board board) {
         if (this.color == Color.BLACK) {
             board.put(new Coordinate(7, 0), new Pawn(Color.WHITE));
             game.move(new Coordinate(7, 0), new Coordinate(6, 1));

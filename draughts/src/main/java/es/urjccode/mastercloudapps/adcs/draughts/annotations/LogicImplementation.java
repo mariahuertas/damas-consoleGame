@@ -1,12 +1,7 @@
-package es.urjccode.mastercloudapps.adcs.draughts.controllers.implementation;
+package es.urjccode.mastercloudapps.adcs.draughts.annotations;
 
-import es.urjccode.mastercloudapps.adcs.draughts.annotations.ControllerImplementation;
-import es.urjccode.mastercloudapps.adcs.draughts.controllers.AceptorController;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.Logic;
-import es.urjccode.mastercloudapps.adcs.draughts.models.DAO.SessionImplementationDAO;
-import es.urjccode.mastercloudapps.adcs.draughts.models.Session;
 import es.urjccode.mastercloudapps.adcs.draughts.models.SessionImplementation;
-import es.urjccode.mastercloudapps.adcs.draughts.models.StateValue;
 import org.reflections.Reflections;
 
 import java.lang.reflect.Constructor;

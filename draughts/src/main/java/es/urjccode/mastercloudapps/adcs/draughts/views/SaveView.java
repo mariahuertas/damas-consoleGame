@@ -1,21 +1,21 @@
 package es.urjccode.mastercloudapps.adcs.draughts.views;
 
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.SubView;
 import es.urjccode.mastercloudapps.adcs.draughts.annotations.SubViewImplementation;
-import es.urjccode.mastercloudapps.adcs.draughts.controllers.AceptorController;
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.AceptorController;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.SaveController;
-import es.urjccode.mastercloudapps.adcs.draughts.models.StateValue;
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.StateValue;
 import es.urjccode.mastercloudapps.adcs.draughts.utils.IO;
-import es.urjccode.mastercloudapps.adcs.draughts.views.Message;
 import es.urjccode.mastercloudapps.adcs.draughts.utils.YesNoDialog;
 
 @SubViewImplementation(StateValue.SAVING)
-class SaveView extends SubView{
+public class SaveView extends SubView {
 
     public SaveView(){
         super();
     }
 
-    void interact(AceptorController aceptorController) {
+    public void interact(AceptorController aceptorController) {
         boolean save = new YesNoDialog().read(Message.SAVE);
         String name = null;
         if (save) {

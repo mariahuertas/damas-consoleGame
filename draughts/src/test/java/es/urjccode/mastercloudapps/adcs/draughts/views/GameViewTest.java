@@ -8,9 +8,10 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.Session;
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.State;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.implementation.StartControllerImplementation;
 import es.urjccode.mastercloudapps.adcs.draughts.models.*;
-import es.urjccode.mastercloudapps.adcs.draughts.models.DAO.SessionImplementationDAO;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -41,7 +42,7 @@ public class GameViewTest {
 
     @Test
     public void testGivenGameViewWhenInteractThenOk(){
-        Game game = new GameBuilder().build();
+        GameImplementation game = new GameBuilder().build();
         Session session = new SessionImplementation(game, new State());
         StartController startController = new StartControllerImplementation(session, null);
         this.gameView.write(startController);
@@ -62,7 +63,7 @@ public class GameViewTest {
 
     @Test
     public void testGivenGameViewWhenInteractWithDraughtThenOk(){
-        Game game = new GameBuilder().rows(
+        GameImplementation game = new GameBuilder().rows(
             "        ",
             "b       ",
             "        ",

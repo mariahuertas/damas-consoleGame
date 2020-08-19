@@ -1,9 +1,12 @@
 package es.urjccode.mastercloudapps.adcs.draughts.controllers;
-import es.urjccode.mastercloudapps.adcs.draughts.models.Session;
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.AceptorController;
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.ControllerVisitor;
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.Session;
+import es.urjccode.mastercloudapps.adcs.draughts.models.SessionImplementation;
 
 public abstract class StartController extends AceptorController {
 
-    public StartController(Session session) {
+    public StartController(SessionImplementation session) {
         super(session);
     }
 

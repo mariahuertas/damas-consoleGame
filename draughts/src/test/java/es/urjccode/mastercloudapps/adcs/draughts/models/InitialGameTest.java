@@ -5,10 +5,10 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class InitialGameTest extends GameTest {
-   
+
     @Test
     public void testGivenGameWhenIsNewThenPrefixedLocations() {
-        this.game = new Game();
+        this.game = new GameImplementation();
         this.setExpectedGame(Color.WHITE,
             " n n n n",
             "n n n n ",
@@ -23,7 +23,7 @@ public class InitialGameTest extends GameTest {
 
     @Test
     public void testGivenGameWhenCancelThenWithoutPieces() {
-        this.game = new Game();
+        this.game = new GameImplementation();
         this.game.cancel();
         this.setExpectedGame(Color.BLACK,
             " n n n n",
@@ -39,7 +39,7 @@ public class InitialGameTest extends GameTest {
 
     @Test
     public void testGivenGameWhenClearThenPrefixedLocations() {
-        this.game = new Game();
+        this.game = new GameImplementation();
         this.game.move(
             new Coordinate(5, 0),
             new Coordinate(4, 1));
@@ -55,5 +55,5 @@ public class InitialGameTest extends GameTest {
             "b b b b ");
         assertEquals(this.expectedGame, this.game);
     }
-    
+
 }

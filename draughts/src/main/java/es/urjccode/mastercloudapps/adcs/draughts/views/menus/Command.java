@@ -1,5 +1,5 @@
 package es.urjccode.mastercloudapps.adcs.draughts.views.menus;
-import  es.urjccode.mastercloudapps.adcs.draughts.controllers.AceptorController;
+import es.urjccode.mastercloudapps.adcs.draughts.annotations.AceptorController;
 
 
 public abstract class Command extends es.urjccode.mastercloudapps.adcs.draughts.utils.Command {
