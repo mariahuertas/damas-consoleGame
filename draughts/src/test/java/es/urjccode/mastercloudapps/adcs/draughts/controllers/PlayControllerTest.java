@@ -16,7 +16,7 @@ public class PlayControllerTest {
     public void testGivenPlayControllerWhenMoveThenOk() {
         Game game = new GameBuilder().build();
         Session session = new SessionImplementation(game, new State());
-        playController = new PlayControllerImplementation(session);
+        playController = new PlayControllerImplementation(session, null);
         Coordinate origin = new Coordinate(5, 0);
         Coordinate target = new Coordinate(4, 1);
         playController.move(origin, target);
@@ -36,7 +36,7 @@ public class PlayControllerTest {
             "        ",
             "        ").build();
         Session session = new SessionImplementation(game, new State());
-        playController = new PlayControllerImplementation(session);
+        playController = new PlayControllerImplementation(session, null);
         Coordinate origin = new Coordinate(5, 0);
         Coordinate target = new Coordinate(3, 2);
         playController.move(origin, target);
@@ -56,7 +56,7 @@ public class PlayControllerTest {
             "        ",
             "        ").build();
         Session session = new SessionImplementation(game, new State());
-        playController = new PlayControllerImplementation(session);
+        playController = new PlayControllerImplementation(session, null);
         Coordinate origin = new Coordinate(5, 0);
         Coordinate target = new Coordinate(4, 1);
         playController.move(origin, target);
@@ -68,7 +68,7 @@ public class PlayControllerTest {
     public void testGivenPlayControllerWhenCancelThenOk() {
         Game game = new GameBuilder().build();
         Session session = new SessionImplementation(game, new State());
-        playController = new PlayControllerImplementation(session);
+        playController = new PlayControllerImplementation(session, null);
         playController.cancel();
         assertEquals(Color.BLACK, playController.getColor());
         assertFalse(game.isBlocked());

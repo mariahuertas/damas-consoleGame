@@ -20,6 +20,7 @@ public class DAOSerializer {
                 serializationElements.put(getSerializedKey(field), field.get(object));
             }
         }
+
         toByteCode(serializationElements);
     }
 

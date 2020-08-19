@@ -17,7 +17,7 @@ public class ResumeControllerTest {
         Game game = new GameBuilder().build();
         this.state = new State();
         Session session = new SessionImplementation(game, state);
-        this.resumeController = new ResumeControllerImplementation(session);
+        this.resumeController = new ResumeControllerImplementation(session, null);
     }
 
     @Test

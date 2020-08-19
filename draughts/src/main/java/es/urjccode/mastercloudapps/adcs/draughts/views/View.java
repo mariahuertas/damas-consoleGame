@@ -3,8 +3,6 @@ package es.urjccode.mastercloudapps.adcs.draughts.views;
 import es.urjccode.mastercloudapps.adcs.draughts.annotations.ControllerImplementation;
 import es.urjccode.mastercloudapps.adcs.draughts.annotations.SubViewImplementation;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.*;
-import es.urjccode.mastercloudapps.adcs.draughts.models.DAO.SessionImplementationDAO;
-import es.urjccode.mastercloudapps.adcs.draughts.models.Session;
 import es.urjccode.mastercloudapps.adcs.draughts.models.StateValue;
 import org.reflections.Reflections;
 
@@ -23,13 +21,17 @@ public class View implements ControllerVisitor {
 
         Reflections reflections = new Reflections("es.urjccode.mastercloudapps.adcs");
         Set<Class<?>> annotatedViews = reflections.getTypesAnnotatedWith(SubViewImplementation.class);
-        Set<Class<?>> annotatedControllers = reflections.getTypesAnnotatedWith(ControllerImplementation.class);
 
-        for(Class<?> subViewClass: annotatedViews) {
-            SubViewImplementation annotation = subViewClass.getAnnotation(SubViewImplementation.class);
-            Constructor constructor = subViewClass.getConstructor();
-            SubView subViewInstance = (SubView) constructor.newInstance();
-            annotatedViewsMap.put(annotation.value(), subViewInstance);
+        try {
+
+            for (Class<?> subViewClass : annotatedViews) {
+                SubViewImplementation annotation = subViewClass.getAnnotation(SubViewImplementation.class);
+                Constructor constructor = subViewClass.getConstructor();
+                SubView subViewInstance = (SubView) constructor.newInstance();
+                annotatedViewsMap.put(annotation.value(), subViewInstance);
+            }
+        } catch (Exception e) {
+        e.printStackTrace();
         }
 
     }

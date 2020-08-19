@@ -5,6 +5,7 @@ import java.util.List;
 import es.urjccode.mastercloudapps.adcs.draughts.annotations.ControllerImplementation;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.*;
 import es.urjccode.mastercloudapps.adcs.draughts.models.*;
+import es.urjccode.mastercloudapps.adcs.draughts.models.DAO.SessionImplementationDAO;
 import es.urjccode.mastercloudapps.adcs.draughts.models.Error;
 
 @ControllerImplementation(StateValue.IN_GAME)
@@ -20,7 +21,7 @@ public class PlayControllerImplementation extends PlayController {
 
 	private ExitController exitController;
 
-	public PlayControllerImplementation(Session session) {
+	public PlayControllerImplementation(Session session, SessionImplementationDAO sessionImplementationDAO) {
 		super(session);
 		this.moveController = new MoveController(this.session);
 		this.undoController = new UndoController(this.session);

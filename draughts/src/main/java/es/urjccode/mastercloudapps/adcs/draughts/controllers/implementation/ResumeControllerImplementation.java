@@ -2,6 +2,7 @@ package es.urjccode.mastercloudapps.adcs.draughts.controllers.implementation;
 
 import es.urjccode.mastercloudapps.adcs.draughts.annotations.ControllerImplementation;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.ResumeController;
+import es.urjccode.mastercloudapps.adcs.draughts.models.DAO.SessionImplementationDAO;
 import es.urjccode.mastercloudapps.adcs.draughts.models.Session;
 import es.urjccode.mastercloudapps.adcs.draughts.models.SessionImplementation;
 import es.urjccode.mastercloudapps.adcs.draughts.models.StateValue;
@@ -9,7 +10,7 @@ import es.urjccode.mastercloudapps.adcs.draughts.models.StateValue;
 @ControllerImplementation(StateValue.FINAL)
 public class ResumeControllerImplementation extends ResumeController {
 
-	public ResumeControllerImplementation(Session session) {
+	public ResumeControllerImplementation(Session session, SessionImplementationDAO sessionImplementationDAO) {
 		super(session);
 	}
 
