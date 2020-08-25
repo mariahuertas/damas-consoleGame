@@ -1,6 +1,8 @@
 package es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework;
 
-import java.lang.reflect.InvocationTargetException;
+import es.urjccode.mastercloudapps.adcs.draughts.models.GameImplementation;
+import es.urjccode.mastercloudapps.adcs.draughts.models.LogicImplementation;
+import es.urjccode.mastercloudapps.adcs.draughts.models.SessionImplementation;
 
 class BoardGame {
 
@@ -10,7 +12,7 @@ class BoardGame {
 
     private BoardGame()  {
         this.view = new View();
-        this.logic = new LogicImplementation();
+        this.logic = new LogicImplementation(new SessionImplementation(new GameImplementation()));
     }
 
     private void play() {

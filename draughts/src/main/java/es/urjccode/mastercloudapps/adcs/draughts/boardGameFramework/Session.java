@@ -10,13 +10,13 @@ public class Session {
     protected Game game;
     protected String name;
 
-    public Session() {
+    public Session(Game game) {
+        this.game = game;
         this.state = new State();
-        this.game = new GameImplementation();
         this.registry = new Registry(this.game);
         this.name = null;
     }
-    public Session(GameImplementation game, State state) {
+    public Session(Game game, State state) {
         this.game = game;
         this.state = state;
     }

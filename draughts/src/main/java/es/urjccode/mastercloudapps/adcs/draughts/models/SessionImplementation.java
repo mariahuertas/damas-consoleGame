@@ -1,12 +1,16 @@
 package es.urjccode.mastercloudapps.adcs.draughts.models;
 
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.Game;
 import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.Session;
 import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.State;
 
+
 public class SessionImplementation extends Session {
 
-    public SessionImplementation()
-    {super();}
+    public SessionImplementation(Game game)
+    {
+        super(game);
+    }
     public SessionImplementation(GameImplementation game, State state) {
         super(game, state);
     }

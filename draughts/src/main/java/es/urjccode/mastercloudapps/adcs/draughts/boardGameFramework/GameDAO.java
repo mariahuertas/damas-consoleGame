@@ -23,7 +23,7 @@ class GameDAO implements DAO {
     @Override
     public void load() {
         try {
-            this.game = (GameImplementation)DAOSerializer.deserialize(this.game);
+            this.game = (Game)DAOSerializer.deserialize(this.game);
         } catch (Exception e) {
             e.printStackTrace();
         }
