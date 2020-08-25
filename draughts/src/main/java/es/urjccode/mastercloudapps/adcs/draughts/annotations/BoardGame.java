@@ -22,7 +22,7 @@ class BoardGame {
 		} while (acceptorController != null);
     }
 
-    public static void main(String[] args) throws NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
+    public static void main(String[] args)  {
         new BoardGame().play();
     }
 
