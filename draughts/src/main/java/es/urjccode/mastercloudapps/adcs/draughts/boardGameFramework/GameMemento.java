@@ -1,7 +1,5 @@
-package es.urjccode.mastercloudapps.adcs.draughts.annotations;
+package es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework;
 
-
-import es.urjccode.mastercloudapps.adcs.draughts.annotations.Memento;
 
 import java.util.HashMap;
 

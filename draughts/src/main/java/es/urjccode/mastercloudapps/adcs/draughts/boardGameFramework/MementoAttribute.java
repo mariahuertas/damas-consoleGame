@@ -1,4 +1,4 @@
-package es.urjccode.mastercloudapps.adcs.draughts.annotations;
+package es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework;
 
 public abstract class MementoAttribute {
 

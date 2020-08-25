@@ -1,11 +1,11 @@
 package es.urjccode.mastercloudapps.adcs.draughts.controllers.implementation;
 
-import es.urjccode.mastercloudapps.adcs.draughts.annotations.ControllerImplementation;
-import es.urjccode.mastercloudapps.adcs.draughts.annotations.Session;
-import es.urjccode.mastercloudapps.adcs.draughts.annotations.StateValue;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.ControllerImplementation;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.Session;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.StateValue;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.*;
 import es.urjccode.mastercloudapps.adcs.draughts.models.*;
-import es.urjccode.mastercloudapps.adcs.draughts.annotations.SessionImplementationDAO;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.SessionImplementationDAO;
 import es.urjccode.mastercloudapps.adcs.draughts.models.Error;
 
 @ControllerImplementation(StateValue.IN_GAME)

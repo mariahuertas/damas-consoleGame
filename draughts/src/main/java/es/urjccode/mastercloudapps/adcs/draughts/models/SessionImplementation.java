@@ -1,7 +1,7 @@
 package es.urjccode.mastercloudapps.adcs.draughts.models;
 
-import es.urjccode.mastercloudapps.adcs.draughts.annotations.Session;
-import es.urjccode.mastercloudapps.adcs.draughts.annotations.State;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.Session;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.State;
 
 public class SessionImplementation extends Session {
 

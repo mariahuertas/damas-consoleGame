@@ -1,6 +1,5 @@
-package es.urjccode.mastercloudapps.adcs.draughts.annotations;
+package es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework;
 
-import es.urjccode.mastercloudapps.adcs.draughts.annotations.AceptorController;
 import es.urjccode.mastercloudapps.adcs.draughts.utils.Console;
 
 public abstract class SubView {

@@ -1,10 +1,5 @@
-package es.urjccode.mastercloudapps.adcs.draughts.annotations;
+package es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework;
 
-import es.urjccode.mastercloudapps.adcs.draughts.annotations.AceptorController;
-import es.urjccode.mastercloudapps.adcs.draughts.annotations.ControllerImplementation;
-import es.urjccode.mastercloudapps.adcs.draughts.annotations.ControllerVisitor;
-import es.urjccode.mastercloudapps.adcs.draughts.annotations.SubViewImplementation;
-import es.urjccode.mastercloudapps.adcs.draughts.annotations.StateValue;
 import org.reflections.Reflections;
 
 import java.lang.reflect.Constructor;

@@ -1,6 +1,6 @@
 package es.urjccode.mastercloudapps.adcs.draughts.models;
 
-import es.urjccode.mastercloudapps.adcs.draughts.annotations.*;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.*;
 import java.util.ArrayList;
 import java.util.List;
 
