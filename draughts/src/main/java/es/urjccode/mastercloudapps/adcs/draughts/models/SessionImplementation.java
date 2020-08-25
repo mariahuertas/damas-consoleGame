@@ -1,9 +1,7 @@
 package es.urjccode.mastercloudapps.adcs.draughts.models;
 
-import es.urjccode.mastercloudapps.adcs.draughts.annotations.Registry;
 import es.urjccode.mastercloudapps.adcs.draughts.annotations.Session;
 import es.urjccode.mastercloudapps.adcs.draughts.annotations.State;
-import es.urjccode.mastercloudapps.adcs.draughts.controllers.StartController;
 
 public class SessionImplementation extends Session {
 

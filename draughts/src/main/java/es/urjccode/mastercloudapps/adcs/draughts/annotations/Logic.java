@@ -1,4 +1,4 @@
-package es.urjccode.mastercloudapps.adcs.draughts.controllers;
+package es.urjccode.mastercloudapps.adcs.draughts.annotations;
 import es.urjccode.mastercloudapps.adcs.draughts.annotations.AceptorController;
 import es.urjccode.mastercloudapps.adcs.draughts.annotations.Session;
 

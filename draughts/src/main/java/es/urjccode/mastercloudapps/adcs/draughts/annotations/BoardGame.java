@@ -1,7 +1,5 @@
 package es.urjccode.mastercloudapps.adcs.draughts.annotations;
 
-import es.urjccode.mastercloudapps.adcs.draughts.controllers.Logic;
-
 import java.lang.reflect.InvocationTargetException;
 
 class BoardGame {

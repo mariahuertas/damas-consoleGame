@@ -1,6 +1,5 @@
 package es.urjccode.mastercloudapps.adcs.draughts.annotations;
 
-import es.urjccode.mastercloudapps.adcs.draughts.controllers.Logic;
 import es.urjccode.mastercloudapps.adcs.draughts.models.SessionImplementation;
 import org.reflections.Reflections;
 
