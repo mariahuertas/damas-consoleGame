@@ -1,9 +1,6 @@
 package es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework;
 
 import es.urjccode.mastercloudapps.adcs.draughts.Draughts;
-import es.urjccode.mastercloudapps.adcs.draughts.models.GameImplementation;
-import es.urjccode.mastercloudapps.adcs.draughts.models.LogicImplementation;
-import es.urjccode.mastercloudapps.adcs.draughts.models.SessionImplementation;
 import org.reflections.Reflections;
 
 import java.lang.reflect.Constructor;
