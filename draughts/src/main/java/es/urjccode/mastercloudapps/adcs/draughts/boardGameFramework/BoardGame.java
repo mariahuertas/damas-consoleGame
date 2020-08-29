@@ -4,18 +4,18 @@ import es.urjccode.mastercloudapps.adcs.draughts.models.GameImplementation;
 import es.urjccode.mastercloudapps.adcs.draughts.models.LogicImplementation;
 import es.urjccode.mastercloudapps.adcs.draughts.models.SessionImplementation;
 
-class BoardGame {
+public class BoardGame {
 
-    private View view;
+    protected View view;
 
-    private Logic logic;
+    protected Logic logic;
 
-    private BoardGame()  {
+    public BoardGame()  {
         this.view = new View();
         this.logic = new LogicImplementation(new SessionImplementation(new GameImplementation()));
     }
 
-    private void play() {
+    public void play() {
         AceptorController acceptorController;
 		do {
             acceptorController = this.logic.getController();
@@ -23,9 +23,4 @@ class BoardGame {
 				this.view.interact(acceptorController);
 		} while (acceptorController != null);
     }
-
-    public static void main(String[] args)  {
-        new BoardGame().play();
-    }
-
 }
