@@ -17,7 +17,7 @@ public abstract class Game implements Originator {
     abstract public void cancel();
 
     @Override
-    public Memento createMemento() throws Exception {
+    public GameMemento createMemento() throws Exception {
 
         GameMemento gameMemento = new GameMemento();
         HashMap<String, Object> mementoFields = new HashMap<String, Object>();
@@ -44,9 +44,8 @@ public abstract class Game implements Originator {
     }
 
     @Override
-    public void restore(Memento memento) throws Exception {
+    public void restore(GameMemento gameMemento) throws Exception {
 
-        GameMemento gameMemento = (GameMemento) memento;
         HashMap<String, Object> mementoFields = gameMemento.getMemento();
         Class<?> objectClass = requireNonNull(this).getClass();
 

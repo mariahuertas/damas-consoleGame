@@ -3,7 +3,7 @@ package es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework;
 
 import java.util.HashMap;
 
-public class GameMemento extends Memento {
+public class GameMemento {
 
     HashMap<String, Object> mementoFields;
 

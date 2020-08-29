@@ -8,7 +8,7 @@ public class Registry {
 
     private int undoCount;
 
-    private ArrayList<Memento> mementoList;
+    private ArrayList<GameMemento> mementoList;
 
     public Registry(Originator originator) {
         this.originator = originator;
