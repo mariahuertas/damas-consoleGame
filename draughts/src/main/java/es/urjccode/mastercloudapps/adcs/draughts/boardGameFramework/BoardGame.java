@@ -17,7 +17,6 @@ public class BoardGame {
 
     public BoardGame()  {
         this.view = new View();
-        this.logic = new LogicImplementation(new SessionImplementation(new GameImplementation()));
     }
 
     public void play() {
