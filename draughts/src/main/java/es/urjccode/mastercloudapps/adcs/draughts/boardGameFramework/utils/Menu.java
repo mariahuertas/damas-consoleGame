@@ -1,14 +1,39 @@
 package es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.utils;
 
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.AceptorController;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.Application;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.BoardGame;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.MenuCommand;
+import org.reflections.Reflections;
+
+import java.lang.reflect.Constructor;
 import java.util.ArrayList;
+import java.util.Set;
 
 public abstract class Menu {
 
     private static final String OPTION = "Choose an option: ";
     private ArrayList<Command> commandList;
 
-    public Menu() {
+    public Menu(AceptorController aceptorController) {
         this.commandList = new ArrayList<Command>();
+
+        Reflections reflections = new Reflections("es.urjccode.mastercloudapps.adcs");
+        Set<Class<?>> commands = reflections.getTypesAnnotatedWith(MenuCommand.class);
+        try {
+            for (Class<?> command : commands) {
+                MenuCommand annotation = command.getAnnotation(MenuCommand.class);
+                if(annotation.value() == this.getClass()) {
+                    Constructor constructor = command.getConstructor(AceptorController.class);
+                    Command commandInstance = (Command) constructor.newInstance(aceptorController);
+                    this.commandList.add(commandInstance);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     public void execute() {

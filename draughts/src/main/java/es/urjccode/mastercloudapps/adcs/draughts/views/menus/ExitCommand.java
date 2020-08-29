@@ -1,12 +1,14 @@
 package es.urjccode.mastercloudapps.adcs.draughts.views.menus;
 
 import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.AceptorController;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.MenuCommand;
 import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.PlayController;
 import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.utils.Command;
 
-class ExitCommand extends Command {
+@MenuCommand(PlayMenu.class)
+public class ExitCommand extends Command {
 
-    protected ExitCommand(AceptorController playController) {
+    public ExitCommand(AceptorController playController) {
         super(CommandTitle.EXIT_COMMAND.getTitle(), playController);
     }
 

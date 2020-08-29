@@ -1,12 +1,14 @@
 package es.urjccode.mastercloudapps.adcs.draughts.views.menus;
 
 import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.AceptorController;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.MenuCommand;
 import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.StartController;
 import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.utils.Command;
 
-class OpenGameCommand extends Command {
+@MenuCommand(StartMenu.class)
+public class OpenGameCommand extends Command {
 
-    protected OpenGameCommand(AceptorController aceptorController) {
+    public OpenGameCommand(AceptorController aceptorController) {
         super(CommandTitle.OPENGAME_COMMAND.getTitle(), aceptorController);
     }
 
