@@ -2,6 +2,7 @@ package es.urjccode.mastercloudapps.adcs.draughts.views.menus;
 
 import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.AceptorController;
 import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.StartController;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.utils.Command;
 
 class NewGameCommand extends Command {
 

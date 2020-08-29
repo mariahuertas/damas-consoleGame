@@ -2,6 +2,7 @@ package es.urjccode.mastercloudapps.adcs.draughts.views.menus;
 
 import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.AceptorController;
 import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.PlayController;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.utils.Command;
 
 public class UndoCommand extends Command {
 
