@@ -1,20 +1,21 @@
-package es.urjccode.mastercloudapps.adcs.draughts.controllers;
+package es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework;
 
 import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.Controller;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.Session;
 import es.urjccode.mastercloudapps.adcs.draughts.models.SessionImplementation;
 
 public class UndoController extends Controller {
 
-    public UndoController(SessionImplementation session) {
+    public UndoController(Session session) {
         super(session);
     }
 
     public void undo() {
-        ((SessionImplementation) this.session).undo();
+         this.session.undo();
     }
 
     public boolean undoable() {
-        return ((SessionImplementation) this.session).undoable();
+        return this.session.undoable();
 
     }
 }

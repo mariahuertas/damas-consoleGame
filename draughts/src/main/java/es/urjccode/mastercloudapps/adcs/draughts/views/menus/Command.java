@@ -2,7 +2,7 @@ package es.urjccode.mastercloudapps.adcs.draughts.views.menus;
 import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.AceptorController;
 
 
-public abstract class Command extends es.urjccode.mastercloudapps.adcs.draughts.utils.Command {
+public abstract class Command extends es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.utils.Command {
 
     protected AceptorController aceptorController;
 

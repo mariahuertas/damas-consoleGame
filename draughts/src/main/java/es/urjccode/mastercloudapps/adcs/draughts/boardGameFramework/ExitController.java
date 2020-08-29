@@ -1,16 +1,17 @@
-package es.urjccode.mastercloudapps.adcs.draughts.controllers;
+package es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework;
 
 import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.Controller;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.Session;
 import es.urjccode.mastercloudapps.adcs.draughts.models.SessionImplementation;
 
 public class ExitController extends Controller {
 
-    public ExitController(SessionImplementation session) {
+    public ExitController(Session session) {
         super(session);
     }
 
     public void next() {
-        ((SessionImplementation) this.session).next();
+         this.session.next();
     }
 
 }

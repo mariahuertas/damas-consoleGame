@@ -22,8 +22,8 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import es.urjccode.mastercloudapps.adcs.draughts.controllers.StartController;
-import es.urjccode.mastercloudapps.adcs.draughts.utils.Console;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.StartController;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.utils.Console;
 
 @RunWith(MockitoJUnitRunner.class)
 public class GameViewTest {

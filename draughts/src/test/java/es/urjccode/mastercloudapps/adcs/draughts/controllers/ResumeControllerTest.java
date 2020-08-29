@@ -2,6 +2,7 @@ package es.urjccode.mastercloudapps.adcs.draughts.controllers;
 
 import static org.junit.Assert.assertEquals;
 
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.ResumeController;
 import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.Session;
 import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.State;
 import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.StateValue;

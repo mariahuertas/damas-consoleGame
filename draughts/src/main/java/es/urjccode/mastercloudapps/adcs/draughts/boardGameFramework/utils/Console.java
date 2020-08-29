@@ -1,11 +1,11 @@
-package es.urjccode.mastercloudapps.adcs.draughts.utils;
+package es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Console {
-	
+
 	private BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(
 			System.in));
 
@@ -56,7 +56,7 @@ public class Console {
 	public void writeln() {
 		System.out.println();
 	}
-	
+
 	public void write(String string) {
 		System.out.print(string);
 	}

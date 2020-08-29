@@ -1,7 +1,7 @@
 package es.urjccode.mastercloudapps.adcs.draughts.views.menus;
 
-import es.urjccode.mastercloudapps.adcs.draughts.controllers.StartController;
-import es.urjccode.mastercloudapps.adcs.draughts.utils.Menu;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.StartController;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.utils.Menu;
 
 class GameSelectMenu extends Menu {
 

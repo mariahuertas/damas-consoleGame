@@ -3,6 +3,7 @@ package es.urjccode.mastercloudapps.adcs.draughts.views;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import es.urjccode.mastercloudapps.adcs.draughts.controllers.implementation.PlayControllerImplementation;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,16 +12,15 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import es.urjccode.mastercloudapps.adcs.draughts.controllers.PlayController;
 import es.urjccode.mastercloudapps.adcs.draughts.models.Color;
 import es.urjccode.mastercloudapps.adcs.draughts.models.Coordinate;
-import es.urjccode.mastercloudapps.adcs.draughts.utils.Console;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.utils.Console;
 
 @RunWith(MockitoJUnitRunner.class)
 public class PlayViewTest {
 
     @Mock
-    PlayController playController;
+    PlayControllerImplementation playController;
     @Mock
     Console console;
     @InjectMocks
@@ -54,7 +54,7 @@ public class PlayViewTest {
         playView.interact(playController);
         verify(playController).move(new Coordinate(2, 1), new Coordinate(3, 0));
     }
-    
+
 
     @Test
     public void testGivenPlayViewWhenInteractWithBadFormatThenError() {
@@ -102,7 +102,7 @@ public class PlayViewTest {
         when(console.readString("Mueven las negras: ")).thenReturn("23.32.41");
         playView.interact(playController);
         verify(playController).move(
-            new Coordinate(1, 2), 
+            new Coordinate(1, 2),
             new Coordinate(2, 1),
             new Coordinate(3, 0));
     }

@@ -1,6 +1,6 @@
 package es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework;
 
-import es.urjccode.mastercloudapps.adcs.draughts.utils.Console;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.utils.Console;
 
 public abstract class SubView {
 

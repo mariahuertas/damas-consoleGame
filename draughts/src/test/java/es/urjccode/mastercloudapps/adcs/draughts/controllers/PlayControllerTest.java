@@ -12,7 +12,7 @@ import org.junit.Test;
 
 public class PlayControllerTest {
 
-    private PlayController playController;
+    private PlayControllerImplementation playController;
 
     @Test
     public void testGivenPlayControllerWhenMoveThenOk() {

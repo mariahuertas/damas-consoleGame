@@ -27,9 +27,8 @@ public class BoardGame {
 
 
     public static void main(String[] args) {
-        new Draughts().play();
         Reflections reflections = new Reflections("es.urjccode.mastercloudapps.adcs");
-        Set<Class<?>> executableGames = reflections.getTypesAnnotatedWith(SubViewImplementation.class);
+        Set<Class<?>> executableGames = reflections.getTypesAnnotatedWith(Application.class);
         try {
             for (Class<?> executableGame : executableGames) {
                 Application annotation = executableGame.getAnnotation(Application.class);

@@ -1,4 +1,4 @@
-package es.urjccode.mastercloudapps.adcs.draughts.utils;
+package es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.utils;
 
 public class YesNoDialog  {
 
@@ -12,7 +12,7 @@ public class YesNoDialog  {
     public YesNoDialog(){
         this.console = new Console();
     }
-    
+
 	public boolean read(String title) {
 		assert title != null;
 		char answer;

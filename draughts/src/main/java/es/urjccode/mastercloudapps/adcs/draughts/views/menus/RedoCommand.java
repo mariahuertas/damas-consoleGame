@@ -1,7 +1,7 @@
 package es.urjccode.mastercloudapps.adcs.draughts.views.menus;
 
 import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.AceptorController;
-import es.urjccode.mastercloudapps.adcs.draughts.controllers.PlayController;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.PlayController;
 
 public class RedoCommand extends Command {
 
