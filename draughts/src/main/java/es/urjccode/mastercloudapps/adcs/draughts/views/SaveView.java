@@ -1,10 +1,10 @@
 package es.urjccode.mastercloudapps.adcs.draughts.views;
 
-import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.SubView;
-import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.SubViewImplementation;
-import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.AceptorController;
-import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.SaveController;
-import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.StateValue;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.MVCInjection.SubView;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.MVCInjection.SubViewImplementation;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.MVCInjection.AceptorController;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.controllers.SaveController;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.models.StateValue;
 import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.utils.IO;
 import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.utils.YesNoDialog;
 

@@ -1,10 +1,13 @@
 package es.urjccode.mastercloudapps.adcs.draughts.models;
 
-import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.*;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.DAO.DAOField;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.memento.MementoField;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.models.Game;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class GameImplementation extends Game{
+public class GameImplementation extends Game {
 
     @DAOField("board")
     @MementoField("board")

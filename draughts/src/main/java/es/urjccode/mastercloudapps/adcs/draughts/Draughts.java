@@ -1,8 +1,8 @@
 package es.urjccode.mastercloudapps.adcs.draughts;
 
-import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.Application;
-import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.BoardGame;
-import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.Logic;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.models.Application;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.models.BoardGame;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.MVCInjection.Logic;
 import es.urjccode.mastercloudapps.adcs.draughts.models.GameImplementation;
 import es.urjccode.mastercloudapps.adcs.draughts.models.SessionImplementation;
 

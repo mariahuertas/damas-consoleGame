@@ -1,7 +1,7 @@
 package es.urjccode.mastercloudapps.adcs.draughts.views;
 
-import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.AceptorController;
-import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.SubView;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.MVCInjection.AceptorController;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.MVCInjection.SubView;
 import es.urjccode.mastercloudapps.adcs.draughts.models.Coordinate;
 import es.urjccode.mastercloudapps.adcs.draughts.models.Piece;
 import es.urjccode.mastercloudapps.adcs.draughts.models.SessionImplementation;

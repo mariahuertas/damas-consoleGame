@@ -12,7 +12,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.ResumeController;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.controllers.ResumeController;
 import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.utils.YesNoDialog;
 
 @RunWith(MockitoJUnitRunner.class)

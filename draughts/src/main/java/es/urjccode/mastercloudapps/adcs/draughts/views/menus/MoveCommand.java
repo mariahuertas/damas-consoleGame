@@ -1,9 +1,9 @@
 package es.urjccode.mastercloudapps.adcs.draughts.views.menus;
 
-import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.AceptorController;
-import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.MenuCommand;
-import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.PlayController;
-import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.utils.Command;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.MVCInjection.AceptorController;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.menu.MenuCommand;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.controllers.PlayController;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.menu.Command;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.implementation.PlayControllerImplementation;
 import es.urjccode.mastercloudapps.adcs.draughts.models.Error;
 import es.urjccode.mastercloudapps.adcs.draughts.views.MoveView;

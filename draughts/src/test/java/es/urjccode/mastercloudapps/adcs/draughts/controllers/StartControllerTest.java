@@ -2,10 +2,10 @@ package es.urjccode.mastercloudapps.adcs.draughts.controllers;
 
 import static org.junit.Assert.assertEquals;
 
-import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.Session;
-import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.StartController;
-import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.State;
-import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.StateValue;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.models.Session;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.controllers.StartController;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.models.State;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.models.StateValue;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.implementation.StartControllerImplementation;
 import es.urjccode.mastercloudapps.adcs.draughts.models.*;
 import org.junit.Before;

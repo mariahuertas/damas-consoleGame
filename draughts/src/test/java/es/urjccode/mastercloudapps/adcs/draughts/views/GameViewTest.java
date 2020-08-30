@@ -8,8 +8,8 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.Session;
-import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.State;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.models.Session;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.models.State;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.implementation.StartControllerImplementation;
 import es.urjccode.mastercloudapps.adcs.draughts.models.*;
 import org.junit.Before;
@@ -22,7 +22,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.StartController;
+import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.controllers.StartController;
 import es.urjccode.mastercloudapps.adcs.draughts.boardGameFramework.utils.Console;
 
 @RunWith(MockitoJUnitRunner.class)
